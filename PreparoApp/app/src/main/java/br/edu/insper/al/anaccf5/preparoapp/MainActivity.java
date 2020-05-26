@@ -28,11 +28,21 @@ public class MainActivity extends AppCompatActivity {
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
         handler.postDelayed(runnable,2000);
         Button cadastro = findViewById(R.id.cadastro);
+        Button senha = findViewById(R.id.recuperarSenha);
 
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Cadastro.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.onPause();
+            }
+        });
+
+        senha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecuperarSenha.class);
                 MainActivity.this.startActivity(intent);
                 MainActivity.this.onPause();
             }

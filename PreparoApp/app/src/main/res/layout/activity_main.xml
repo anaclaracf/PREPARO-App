@@ -134,7 +134,8 @@
             android:textAllCaps="true"
             android:textColor="@color/colorAccent2"
             android:fontFamily="sans-serif"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:id="@+id/recuperarSenha"/>
     </RelativeLayout>
 
 </RelativeLayout>

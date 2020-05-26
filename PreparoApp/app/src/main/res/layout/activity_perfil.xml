@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad_bg"
+    tools:context=".Cadastro"
+    android:animateLayoutChanges="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp">
+
+        <ImageView
+            android:id="@+id/imgView_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgView_logo"
+            android:id="@+id/rellay1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="30sp"
+                android:textColor="@color/colorAccent2"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="30dp"
+                android:id="@+id/tv_login"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_login"
+                android:orientation="vertical"
+                android:id="@+id/linlay1"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: "
+                        android:textAllCaps="true"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25sp"
+                        android:textColor="@color/colorAccent2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID: "
+                        android:textAllCaps="true"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25sp"
+                        android:textColor="@color/colorAccent2"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/linlay1"
+                android:text="Logout"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent2"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_bg"
+                android:layout_marginTop="50dp"
+                android:id="@+id/logout"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/rellay2">
+
+    </RelativeLayout>
+
+</RelativeLayout>

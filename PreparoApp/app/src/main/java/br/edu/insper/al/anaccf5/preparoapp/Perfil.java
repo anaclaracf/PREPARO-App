@@ -30,7 +30,11 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Conexao.logout();
-                finish();
+                Intent intent = new Intent(Perfil.this, MainActivity.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+                user_email.setText("");
+                le_id.setText("");
 
             }
         });

@@ -2,9 +2,11 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,5 +27,15 @@ public class MainActivity extends AppCompatActivity {
         rellay1 = (RelativeLayout) findViewById(R.id.rellay1);
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
         handler.postDelayed(runnable,2000);
+        Button cadastro = findViewById(R.id.cadastro);
+
+        cadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Cadastro.class);
+                MainActivity.this.startActivity(intent);
+                MainActivity.this.onPause();
+            }
+        });
     }
 }

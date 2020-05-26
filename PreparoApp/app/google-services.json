@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "951127086915",
+    "firebase_url": "https://preparo-2bfae.firebaseio.com",
+    "project_id": "preparo-2bfae",
+    "storage_bucket": "preparo-2bfae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951127086915:android:ea178695b191dea1e101f6",
+        "android_client_info": {
+          "package_name": "br.edu.insper.al.anaccf5.preparoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951127086915-rlua1c6gm2ti3jgc2cg4l6302cseg8l0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.insper.al.anaccf5.preparoapp",
+            "certificate_hash": "9a4f399aba8cce1d6b47c71f254ddbeb832d853d"
+          }
+        },
+        {
+          "client_id": "951127086915-7j7a8vfqcs3umj5bt5063glkbn6og3t0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZefe8hIWe4LD550KE_bBgx-dj9DRAXtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951127086915-7j7a8vfqcs3umj5bt5063glkbn6og3t0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

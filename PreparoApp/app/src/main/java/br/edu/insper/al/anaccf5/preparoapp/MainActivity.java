@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, Perfil.class);
                             startActivity(intent);
                         }else {
-                            alert("e-mail ou senha errados");
+                            alert("Dados incorretos");
                         }
                     }
                 });

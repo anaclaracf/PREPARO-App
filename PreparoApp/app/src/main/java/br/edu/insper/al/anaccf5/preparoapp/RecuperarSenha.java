@@ -37,7 +37,11 @@ public class RecuperarSenha extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String email = editEmail.getText().toString().trim();
-                resetSenha(email);
+                if (email.isEmpty()){
+                    alert("E-mail inválido");
+                } else {
+                    resetSenha(email);
+                }
             }
         });
     }

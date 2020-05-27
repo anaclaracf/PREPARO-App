@@ -81,7 +81,12 @@
                         android:fontFamily="sans-serif"
                         android:textSize="15sp"
                         android:textColor="@color/colorAccent2"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        app:passwordToggleEnabled="true">
                     <EditText
+                        android:inputType="textPassword"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/et_bg"
@@ -92,6 +97,8 @@
                         android:paddingRight="15dp"
                         android:layout_marginTop="5dp"
                         android:id="@+id/senha_login"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
             <Button

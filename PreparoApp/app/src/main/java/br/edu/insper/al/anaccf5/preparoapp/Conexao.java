@@ -7,7 +7,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Conexao {
     private static FirebaseAuth firebaseAuth;
-    private static FirebaseAuth.AuthStateListener authStateListener;
     private static FirebaseUser firebaseUser;
 
     private Conexao(){
@@ -23,11 +22,11 @@ public class Conexao {
 
     private static void inicializaFirebase() {
         firebaseAuth = firebaseAuth.getInstance();
-        authStateListener = new FirebaseAuth.AuthStateListener() {
+        FirebaseAuth.AuthStateListener authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null){
+                if (user != null) {
                     firebaseUser = user;
                 }
             }

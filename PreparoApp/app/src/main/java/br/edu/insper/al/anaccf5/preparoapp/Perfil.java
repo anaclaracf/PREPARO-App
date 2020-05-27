@@ -2,6 +2,7 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Perfil extends AppCompatActivity {
 
-    private FirebaseAuth auth;
     private FirebaseUser user;
 
     private TextView user_email, le_id;
@@ -33,9 +33,8 @@ public class Perfil extends AppCompatActivity {
                 Intent intent = new Intent(Perfil.this, MainActivity.class);
                 Perfil.this.startActivity(intent);
                 Perfil.this.onPause();
-                user_email.setText("");
-                le_id.setText("");
-
+                user_email.setText("E-mail \n");
+                le_id.setText("ID \n");
             }
         });
     }
@@ -49,17 +48,18 @@ public class Perfil extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        auth = Conexao.getFirebaseAuth();
+        FirebaseAuth auth = Conexao.getFirebaseAuth();
         user = Conexao.getFirebaseUser();
         verificaUser();
     }
 
+    @SuppressLint("SetTextI18n")
     private void verificaUser() {
         if (user == null){
             finish();
-        }else {
-            user_email.setText("Email: "+user.getEmail());
-            le_id.setText("ID: "+user.getUid());
+        } else {
+            user_email.setText("E-mail: \n".concat(user.getEmail() + "\n"));
+            le_id.setText("ID: \n".concat(user.getUid() + "\n"));
         }
     }
 }

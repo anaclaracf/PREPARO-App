@@ -25,6 +25,7 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         final EditText email = findViewById(R.id.email);
         final EditText senha = findViewById(R.id.senha);
+        final EditText confirmation = findViewById(R.id.confirmation_senha);
         Button cadastrar = findViewById(R.id.button_cadastro);
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
@@ -32,8 +33,16 @@ public class Cadastro extends AppCompatActivity {
             public void onClick(View view) {
                 String email_usuario = email.getText().toString().trim();
                 String senha_usuario = senha.getText().toString().trim();
-                criarUser(email_usuario, senha_usuario);
-
+                String confirmation_senha = confirmation.getText().toString().trim();
+                if (confirmation_senha.equals(senha_usuario)){
+                    if  (email_usuario.isEmpty() || senha_usuario.isEmpty()){
+                        alert("Dados insuficientes");
+                    } else {
+                        criarUser(email_usuario, senha_usuario);
+                    }
+                } else {
+                    alert("As senhas divergem");
+                }
             }
         });
     }
@@ -48,7 +57,7 @@ public class Cadastro extends AppCompatActivity {
                             Intent intent = new Intent(Cadastro.this, Perfil.class);
                             Cadastro.this.startActivity(intent);
                             Cadastro.this.onPause();
-                        }else {
+                        } else {
                             alert("Erro de cadastro");
                         }
                     }

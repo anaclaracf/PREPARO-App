@@ -65,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = email_usuario.getText().toString().trim();
                 String senha = senha_usuario.getText().toString().trim();
-                login(email,senha);
+                if (email.isEmpty() || senha.isEmpty()){
+                    alert("Dados insuficientes");
+                } else {
+                    login(email, senha);
+                }
             }
         });
     }

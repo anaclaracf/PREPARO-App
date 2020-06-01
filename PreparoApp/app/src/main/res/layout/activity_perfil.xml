@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="500dp"
+        android:layout_marginBottom="470dp"
         android:background="?selectableItemBackgroundBorderless"
         android:elevation="1dp"
         android:src="@drawable/paul"/>
@@ -33,7 +33,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110dp"
+                android:layout_marginTop="95dp"
                 android:text="Paul Arthur Stuart"
 
                 android:textStyle="bold"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cientista de Dados"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="145dp"
+                android:layout_marginTop="135dp"
                 android:textSize="17sp"
                 android:textColor="@color/colorPrimary"/>
             <View
@@ -60,20 +60,15 @@
                 android:layout_marginTop="210dp"
                 android:textColor="@color/colorPrimary"
                 android:background="#FFFFFF"
-                android:text="Formação Acadêmica"
+                android:text="   Formação Acadêmica"
                 android:textAllCaps="false"
+                android:paddingRight="10dp"
                 android:textSize="17dp"
+                android:drawableStart="@drawable/ic_mortarboard"
+                android:drawableEnd="@drawable/ic_right_arrow"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
-                android:paddingLeft="10dp">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/ic_right_arrow"
-                    android:elevation="2dp"/>
-            </Button>
-
+                android:paddingLeft="10dp"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -81,11 +76,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="290dp"
                 android:background="#FFFFFF"
-                android:text="Currículo"
+                android:text="   Currículo"
                 android:textColor="@color/colorPrimary"
                 android:textAllCaps="false"
                 android:textSize="17dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:paddingRight="10dp"
                 style="?android:attr/borderlessButtonStyle"
+                android:drawableStart="@drawable/ic_resume"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"/>
             <Button
@@ -94,11 +92,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="370dp"
                 android:background="#FFFFFF"
-                android:text="Habilidades"
+                android:text="   Habilidades"
                 android:textColor="@color/colorPrimary"
                 android:textAllCaps="false"
                 android:textSize="17dp"
                 style="?android:attr/borderlessButtonStyle"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:drawableStart="@drawable/ic_skills"
+                android:paddingRight="10dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"/>
             <Button
@@ -107,10 +108,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="450dp"
                 android:background="#FFFFFF"
-                android:text="Interesses"
+                android:text="    Interesses"
                 android:textColor="@color/colorPrimary"
                 android:textAllCaps="false"
                 android:textSize="17dp"
+                android:drawableStart="@drawable/ic_user"
+                android:drawableEnd="@drawable/ic_right_arrow"
+                android:paddingRight="10dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"/>

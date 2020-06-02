@@ -30,6 +30,8 @@ public class InformacoesPessoais extends AppCompatActivity {
     String git;
     String link;
 
+    Map<String,Object> mapuser = new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,6 @@ public class InformacoesPessoais extends AppCompatActivity {
 
                     numeroid = user.getUid();
                     DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
-                    Map<String,Object> mapuser = new HashMap<>();
                     mapuser.put("nome", name);
                     mapuser.put("sobrenome", lastname);
                     mapuser.put("telefone", phone);
@@ -72,7 +73,7 @@ public class InformacoesPessoais extends AppCompatActivity {
                     }
                     mapuser.put("git", git);
                     mapuser.put("linkedin", link);
-                    documentReference.set(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             System.out.println("deu bom");

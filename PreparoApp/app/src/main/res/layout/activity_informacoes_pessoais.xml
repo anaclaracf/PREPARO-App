@@ -114,7 +114,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/senha"
+                            android:id="@+id/nome"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -144,7 +144,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/sobrenome"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -174,7 +174,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/telefone"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -204,7 +204,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/github"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -234,7 +234,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/linkedin"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"

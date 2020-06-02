@@ -55,7 +55,7 @@ public class InformacoesPessoais extends AppCompatActivity {
                 link = linkedin.getText().toString().trim();
 
                 if  (name.isEmpty() || lastname.isEmpty() || phone.isEmpty()){
-                    alert("Dados insuficientes");
+                    alert("Preencha os dados obrigatórios");
                 } else {
 
                     numeroid = user.getUid();

@@ -104,14 +104,4 @@ public class InformacoesPessoais extends AppCompatActivity {
             finish();
         }
     }
-//        avancar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(InformacoesPessoais.this, Identificacao.class);
-//                startActivity(intent);
-//                onPause();
-//
-//                }
-//
-//        });
 }

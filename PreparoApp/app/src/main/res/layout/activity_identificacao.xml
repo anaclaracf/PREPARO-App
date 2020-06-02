@@ -22,8 +22,8 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="Informações Pessoais"
+                android:layout_marginTop="35dp"
+                android:text="Identificação"
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:textColor="@color/colorPrimary"
@@ -44,13 +44,13 @@
                 android:layout_marginLeft="306dp"
                 android:background="@color/transparent"
                 android:drawableEnd="@drawable/ic_direita"
-                android:gravity="center_horizontal|top"
-                android:id="@+id/continuar"/>
+                android:id="@+id/continuar"
+                android:gravity="center_horizontal|top" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:background="@color/colorAccent2"/>
 
             <RelativeLayout
@@ -71,31 +71,31 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="09dp">
 
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:orientation="vertical">-->
 
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginLeft="10dp"-->
-<!--                            android:fontFamily="sans-serif"-->
-<!--                            android:text="Email"-->
-<!--                            android:textAllCaps="true"-->
-<!--                            android:textColor="@color/colorPrimary"-->
-<!--                            android:textSize="15sp" />-->
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginLeft="10dp"-->
+                    <!--                            android:fontFamily="sans-serif"-->
+                    <!--                            android:text="Email"-->
+                    <!--                            android:textAllCaps="true"-->
+                    <!--                            android:textColor="@color/colorPrimary"-->
+                    <!--                            android:textSize="15sp" />-->
 
-<!--                        <EditText-->
-<!--                            android:id="@+id/email"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="40dp"-->
-<!--                            android:layout_marginTop="5dp"-->
-<!--                            android:background="@drawable/btn_bg"-->
-<!--                            android:fontFamily="sans-serif"-->
-<!--                            android:textColor="@color/colorPrimary"-->
-<!--                            android:textSize="15sp" />-->
-<!--                    </LinearLayout>-->
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/email"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:layout_marginTop="5dp"-->
+                    <!--                            android:background="@drawable/btn_bg"-->
+                    <!--                            android:fontFamily="sans-serif"-->
+                    <!--                            android:textColor="@color/colorPrimary"-->
+                    <!--                            android:textSize="15sp" />-->
+                    <!--                    </LinearLayout>-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="Nome *"
+                            android:text="CPF *"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
@@ -138,7 +138,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="sobrenome *"
+                            android:text="DATA DE NASCIMENTO *"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
@@ -168,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="telefone *"
+                            android:text="Nacionalidade *"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
@@ -198,7 +198,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="link do github"
+                            android:text="Estado Civil *"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
@@ -228,7 +228,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="Link do linkedin"
+                            android:text="Gênero *"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
@@ -247,26 +247,25 @@
                             android:textSize="15sp" />
                     </LinearLayout>
                 </LinearLayout>
-                <!--            <RelativeLayout-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:gravity="center_horizontal"-->
-                <!--                android:layout_marginLeft="23dp"-->
-                <!--                android:layout_marginRight="23dp"-->
-                <!--                android:layout_marginTop="525dp"-->
-                <!--                android:id="@+id/rellay2">-->
-                <!--                <Button-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:background="@drawable/botton_geral"-->
-                <!--                    android:text="   Preencher depois   "-->
-                <!--                    android:textAllCaps="false"-->
-                <!--                    android:layout_marginBottom="12dp"-->
-                <!--                    android:textColor="@color/colorAccent2"-->
-                <!--                    android:fontFamily="sans-serif"-->
-                <!--                    android:id="@+id/cadastro" />-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|bottom"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginTop="450dp"
+                        android:id="@+id/rellay2">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/botton_geral"
+                            android:text="   Preencher depois   "
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorAccent2"
+                            android:fontFamily="sans-serif"
+                            android:id="@+id/cadastro" />
 
-                <!--            </RelativeLayout>-->
+                    </RelativeLayout>
 
             </RelativeLayout>
 

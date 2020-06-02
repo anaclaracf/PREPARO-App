@@ -7,24 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Localizacao extends AppCompatActivity {
+public class Identificacao extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_localizacao);
-
-        Button avancar = findViewById(R.id.continuar);
+        setContentView(R.layout.activity_identificacao);
+        Button avancar= findViewById(R.id.continuar);
 
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Localizacao.this, Curriculo.class);
+                Intent intent = new Intent(Identificacao.this, Localizacao.class);
                 startActivity(intent);
                 onPause();
 
-            };
+            }
+
         });
-    };
+    }
 }
 

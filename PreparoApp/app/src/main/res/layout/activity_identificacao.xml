@@ -252,13 +252,14 @@
                         android:id="@+id/rellay2">
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/botton_geral"
+                            android:layout_height="40dp"
+                            android:background="@drawable/btn_bg"
                             android:text="   Preencher depois   "
                             android:textAllCaps="false"
                             android:textColor="@color/colorAccent2"
                             android:fontFamily="sans-serif"
                             android:id="@+id/preencherDepois" />
+
 
                     </RelativeLayout>
 

@@ -16,7 +16,7 @@
             android:layout_width="364dp"
             android:layout_height="600dp"
             android:layout_gravity="center_horizontal"
-            app:cardCornerRadius="15dp" >
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:id="@+id/textView"

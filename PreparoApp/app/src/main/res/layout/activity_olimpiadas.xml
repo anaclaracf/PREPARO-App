@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grad_bg"
-    tools:context=".Localizacao">
+    tools:context=".Olimpiadas">
 
 
     <LinearLayout
@@ -16,9 +16,12 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="364dp"
-            android:layout_height="620dp"
+            android:layout_height="1100dp"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
             app:cardCornerRadius="15dp">
+
 
             <TextView
                 android:id="@+id/textView"
@@ -26,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
-                android:text="Localização"
+                android:text="Olimpíadas"
                 android:textColor="@color/colorPrimary"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -61,7 +64,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgView_logo"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
                 android:elevation="1dp">
 
                 <LinearLayout
@@ -71,12 +73,12 @@
                     android:layout_below="@+id/tv_login"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="12dp"
+                    android:layout_marginTop="80dp"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -84,17 +86,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="CEP"
+                            android:text="IMC"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/senha"
+                        <Spinner
+                            android:id="@+id/spinner_8"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
-                            android:background="@drawable/btn_bg"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:inputType="textPassword"
                             android:paddingLeft="25dp"
@@ -106,7 +108,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -114,17 +116,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="Endereço"
+                            android:text="IMO"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/confirmation_senha"
+                        <Spinner
+                            android:id="@+id/spinner_9"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
-                            android:background="@drawable/btn_bg"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:inputType="textPassword"
                             android:paddingLeft="25dp"
@@ -136,7 +138,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -144,17 +146,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="Bairro"
+                            android:text="ICHO"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/confirmation_senha"
+                        <Spinner
+                            android:id="@+id/spinner_10"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
-                            android:background="@drawable/btn_bg"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:inputType="textPassword"
                             android:paddingLeft="25dp"
@@ -166,7 +168,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -174,17 +176,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="cidade"
+                            android:text="IOI"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/confirmation_senha"
+                        <Spinner
+                            android:id="@+id/spinner_11"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
-                            android:background="@drawable/btn_bg"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:inputType="textPassword"
                             android:paddingLeft="25dp"
@@ -196,7 +198,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -204,17 +206,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:fontFamily="sans-serif"
-                            android:text="Estado"
+                            android:text="CIIC"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/confirmation_senha"
+                        <Spinner
+                            android:id="@+id/spinner_12"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
-                            android:background="@drawable/btn_bg"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:inputType="textPassword"
                             android:paddingLeft="25dp"
@@ -226,7 +228,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="20dp"
                         android:orientation="vertical">
 
 
@@ -236,20 +238,181 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="3dp"
                             android:fontFamily="sans-serif"
-                            android:text="Complemento"
+                            android:text="OBM"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/email"
+                        <Spinner
+                            android:id="@+id/spinner_13"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
-                            android:background="@drawable/btn_bg"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
                             android:fontFamily="sans-serif"
+                            android:text="OBQ"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_14"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="sans-serif"
+                            android:text="OBI"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_15"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="sans-serif"
+                            android:text="OBF"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_16"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="sans-serif"
+                            android:text="OBMEP"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_17"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="sans-serif"
+                            android:text="OBFEP"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner_18"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -260,7 +423,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23dp"
-                    android:layout_marginTop="485dp"
+                    android:layout_marginTop="1015dp"
                     android:layout_marginRight="23dp"
                     android:gravity="center_horizontal">
 
@@ -276,6 +439,7 @@
 
                 </RelativeLayout>
 
+
             </RelativeLayout>
 
 
@@ -283,4 +447,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</ScrollView>

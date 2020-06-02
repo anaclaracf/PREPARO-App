@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">PreparoApp</string>
+    <string-array name="classificacao_habilidades">
+        <item>Nenhum item selecionado</item>
+        <item>Aprenderia</item>
+        <item>Básico</item>
+        <item>Intermediário</item>
+        <item>Avançado</item>
+        <item>Especialista</item>
+    </string-array>
+    <string-array name="classificacao_olimpiadas">
+        <item>Nenhum item selecionado</item>
+        <item>Menção</item>
+        <item>Bronze</item>
+        <item>Prata</item>
+        <item>Ouro</item>
+        <item>Seletiva</item>
+    </string-array>
+
+
 </resources>

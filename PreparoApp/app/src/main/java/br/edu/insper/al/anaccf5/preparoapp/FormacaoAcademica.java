@@ -17,8 +17,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-public class FormacaoAcademica extends AppCompatActivity {
+public class FormacaoAcademica extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private FirebaseFirestore fstore;
     private FirebaseUser user;
@@ -38,6 +41,12 @@ public class FormacaoAcademica extends AppCompatActivity {
         final EditText situacao = findViewById(R.id.situacao);
         Button avancar= findViewById(R.id.seguinte);
         fstore = FirebaseFirestore.getInstance();
+
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classificacao_formacao,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
         avancar.setOnClickListener(new View.OnClickListener() {
 
@@ -84,5 +93,15 @@ public class FormacaoAcademica extends AppCompatActivity {
         if (user == null){
             finish();
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

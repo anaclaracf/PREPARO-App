@@ -6,4 +6,5 @@
     <color name="colorAccent2">#d4d8da</color>
     <color name="colorAccent3">#3b4b5b</color>
     <color name="transparent">#00000000</color>
+    <color name="branco">#FFFFFF</color>
 </resources>

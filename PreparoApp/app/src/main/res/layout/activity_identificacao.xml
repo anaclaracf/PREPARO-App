@@ -257,7 +257,7 @@
                             android:background="@drawable/btn_bg"
                             android:text="   Preencher depois   "
                             android:textAllCaps="false"
-                            android:textColor="@color/colorAccent2"
+                            android:textColor="@color/colorPrimary"
                             android:fontFamily="sans-serif"
                             android:id="@+id/preencherDepois" />
 

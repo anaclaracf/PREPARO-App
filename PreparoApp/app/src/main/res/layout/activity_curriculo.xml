@@ -63,18 +63,38 @@
                 android:layout_gravity="center_vertical"
                 android:elevation="1dp">
                 <Button
+                    android:id="@+id/botao_curriculo"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
                     android:background="@drawable/btn_bg"
+                    android:layout_marginTop="100dp"
                     android:text="Insira seu Currículo aqui"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
                     android:fontFamily="sans-serif"
-                    android:textSize="15dp"
+                    android:textSize="15dp" />
 
-                    />
+                <TextView
+                    android:id="@+id/mensagem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="210dp"
+                    android:text="nenhum arquivo foi selecionado"/>
+
+                <Button
+                    android:id="@+id/botao_upload"
+                    android:layout_width="300dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="250dp"
+                    android:background="@drawable/btn_bg"
+                    android:text="Upload"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="sans-serif"
+                    android:textSize="15dp" />
               
                 <RelativeLayout
                     android:layout_width="match_parent"

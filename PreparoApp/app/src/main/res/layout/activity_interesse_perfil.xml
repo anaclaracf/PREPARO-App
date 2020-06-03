@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Perfil">
+    tools:context=".InteressePerfil">
 
     <ImageView
         android:layout_width="150dp"
@@ -54,19 +54,18 @@
                 android:layout_marginTop="185dp"
                 android:background="@color/colorAccent2"/>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="190dp"
-                android:layout_marginLeft="25dp"
                 android:textColor="@color/colorPrimary"
                 android:background="#FFFFFF"
-                android:text="   Formação Acadêmica"
+                android:text="   Interesses"
                 android:textAllCaps="false"
                 android:paddingRight="10dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:drawableStart="@drawable/ic_mortarboard"
+                android:drawableStart="@drawable/ic_user"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"/>
@@ -78,66 +77,20 @@
                 android:layout_marginTop="265dp"
                 android:textColor="@color/colorPrimary"
                 android:background="#FFFFFF"
-                android:text="Graduação"
+                android:text="Engenharia, Direito, Educação"
                 android:paddingRight="10dp"
                 android:textAllCaps="false"
                 android:textSize="17dp"
-                android:id="@+id/processoGrad"
+                android:id="@+id/interesse"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
                 android:textStyle="bold"
                 android:paddingLeft="10dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="308dp"
-                android:textColor="@color/colorPrimary"
-                android:background="#FFFFFF"
-                android:text="Insper"
-                android:paddingRight="10dp"
-                android:textAllCaps="false"
-                android:textSize="13dp"
-                android:id="@+id/li_instituicao"
-                style="?android:attr/borderlessButtonStyle"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="338dp"
-                android:textColor="@color/colorPrimary"
-                android:background="#FFFFFF"
-                android:text="Engenharia da computação"
-                android:paddingRight="10dp"
-                android:textAllCaps="false"
-                android:textSize="13dp"
-                android:id="@+id/le_curso"
-                style="?android:attr/borderlessButtonStyle"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="365dp"
-                android:textColor="@color/colorPrimary"
-                android:background="#FFFFFF"
-                android:text="Cursando, 8˚Semestre"
-                android:paddingRight="10dp"
-                android:textAllCaps="false"
-                android:textSize="12dp"
-                android:id="@+id/Situation"
-                style="?android:attr/borderlessButtonStyle"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"/>
+
+
 
 
 
@@ -146,3 +99,7 @@
 
 
 </RelativeLayout>
+
+
+
+

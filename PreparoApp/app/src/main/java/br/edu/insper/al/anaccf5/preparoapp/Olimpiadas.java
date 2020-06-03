@@ -43,7 +43,10 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olimpiadas);
 
+
         Button avancarr = findViewById(R.id.continuarr);
+        Button avancar = findViewById(R.id.continuar);
+        Button voltar = findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
         Button perfil2= findViewById(R.id.ir_perfil2);
@@ -172,11 +175,23 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
                     }
                 });
 
-                Intent intent = new Intent(Olimpiadas.this, Perfil.class);
+                Intent intent = new Intent(Olimpiadas.this, AreasInteresse.class);
                 startActivity(intent);
                 Olimpiadas.this.onPause();
             };
         });
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Olimpiadas.this, Habilidades.class);
+                startActivity(intent);
+                Olimpiadas.this.onPause();
+            }
+        });
+
 
     }
 

@@ -35,7 +35,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="8dp"
                 android:background="@color/transparent"
-                android:drawableStart="@drawable/ic_esquerda" />
+                android:drawableStart="@drawable/ic_esquerda"
+                android:id="@+id/voltar"/>
 
             <Button
                 android:layout_width="50dp"
@@ -154,6 +155,7 @@
                             android:fontFamily="sans-serif"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
+                            android:hint="Ex: Cursando, 1˚Semestre"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
                     </LinearLayout>

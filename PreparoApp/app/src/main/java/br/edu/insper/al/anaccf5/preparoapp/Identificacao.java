@@ -41,6 +41,7 @@ public class Identificacao extends AppCompatActivity {
         final EditText eCivil = findViewById(R.id.estado_civil);
         final EditText generoUser = findViewById(R.id.genero);
         Button avancar= findViewById(R.id.continuar);
+        Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
         Button perfil4= findViewById(R.id.ir_perfil4);
@@ -54,6 +55,18 @@ public class Identificacao extends AppCompatActivity {
             }
         });
 
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Identificacao.this, InformacoesPessoais.class);
+                startActivity(intent);
+                Identificacao.this.onPause();
+
+            }
+        });
 
 
         avancar.setOnClickListener(new View.OnClickListener() {

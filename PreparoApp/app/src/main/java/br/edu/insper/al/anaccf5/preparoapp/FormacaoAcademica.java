@@ -30,6 +30,8 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
     String institution;
     String course;
     String situation;
+    String processograd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         final EditText curso = findViewById(R.id.curso);
         final EditText situacao = findViewById(R.id.situacao);
         Button avancar= findViewById(R.id.seguinte);
+        Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
         Button perfil1= findViewById(R.id.ir_perfil1);
 
@@ -54,11 +57,23 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
 
 
 
-        Spinner spinner = findViewById(R.id.spinner);
+        final Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classificacao_formacao,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FormacaoAcademica.this, Identificacao.class);
+                startActivity(intent);
+                FormacaoAcademica.this.onPause();
+            }
+        });
+
 
         avancar.setOnClickListener(new View.OnClickListener() {
 
@@ -67,23 +82,31 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
                 institution = instituicao.getText().toString().trim();
                 course = curso.getText().toString().trim();
                 situation = situacao.getText().toString().trim();
+                processograd = spinner.getSelectedItem().toString();
+
+                if (institution.isEmpty() || course.isEmpty() || situation.isEmpty() || processograd.isEmpty()){
+                    alert("Preencha todos os campos");
+                } else {
 
 
-                numeroid = user.getUid();
-                DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
-                Map<String,Object> mapuser = new HashMap<>();
-                mapuser.put("instituicao", institution);
-                mapuser.put("curso", course);
-                mapuser.put("situacao", situation);
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
-                Intent intent = new Intent(FormacaoAcademica.this, Localizacao.class);
-                startActivity(intent);
-                FormacaoAcademica.this.onPause();
+                    numeroid = user.getUid();
+                    DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
+                    Map<String, Object> mapuser = new HashMap<>();
+                    mapuser.put("instituicao", institution);
+                    mapuser.put("curso", course);
+                    mapuser.put("situacao", situation);
+                    mapuser.put("processograd", processograd);
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    Intent intent = new Intent(FormacaoAcademica.this, Localizacao.class);
+                    startActivity(intent);
+                    FormacaoAcademica.this.onPause();
+
+                }
 
             }
         });

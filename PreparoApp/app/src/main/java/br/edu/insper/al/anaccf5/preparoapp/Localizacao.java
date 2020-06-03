@@ -43,8 +43,19 @@ public class Localizacao extends AppCompatActivity {
         final EditText estadoUser = findViewById(R.id.estado);
         final EditText complementoUser = findViewById(R.id.complemento);
         Button avancar= findViewById(R.id.continuar);
+        Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Localizacao.this, FormacaoAcademica.class);
+                startActivity(intent);
+                Localizacao.this.onPause();
+            }
+        });
 
         avancar.setOnClickListener(new View.OnClickListener() {
 

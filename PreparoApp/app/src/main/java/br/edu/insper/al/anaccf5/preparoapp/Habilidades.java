@@ -39,6 +39,7 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habilidades);
         Button avancar = findViewById(R.id.continuar);
+        Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
         final Spinner spinner1 = findViewById(R.id.spinner_1);
@@ -82,6 +83,20 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner7.setAdapter(adapter7);
         spinner7.setOnItemSelectedListener(this);
+
+
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Habilidades.this, Curriculo.class);
+                startActivity(intent);
+                Habilidades.this.onPause();
+            }
+        });
+
 
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override

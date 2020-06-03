@@ -43,7 +43,22 @@ public class InformacoesPessoais extends AppCompatActivity {
         final EditText github = findViewById(R.id.github);
         final EditText linkedin = findViewById(R.id.linkedin);
         Button avancar= findViewById(R.id.continuar);
+        Button voltar=findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
+
+
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(InformacoesPessoais.this, Cadastro.class);
+                startActivity(intent);
+                InformacoesPessoais.this.onPause();
+            }
+            });
+
 
 
         avancar.setOnClickListener(new View.OnClickListener() {

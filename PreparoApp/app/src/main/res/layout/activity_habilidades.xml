@@ -40,7 +40,8 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/transparent"
-                android:drawableStart="@drawable/ic_esquerda" />
+                android:drawableStart="@drawable/ic_esquerda" 
+                android:id="@+id/voltar"/>
 
             <Button
                 android:id="@+id/continuar"

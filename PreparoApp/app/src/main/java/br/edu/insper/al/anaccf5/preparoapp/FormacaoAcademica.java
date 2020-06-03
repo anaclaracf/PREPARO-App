@@ -42,6 +42,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         final EditText curso = findViewById(R.id.curso);
         final EditText situacao = findViewById(R.id.situacao);
         Button avancar= findViewById(R.id.seguinte);
+        Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
         final Spinner spinner = findViewById(R.id.spinner);
@@ -49,6 +50,18 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FormacaoAcademica.this, Identificacao.class);
+                startActivity(intent);
+                FormacaoAcademica.this.onPause();
+            }
+        });
+
 
         avancar.setOnClickListener(new View.OnClickListener() {
 

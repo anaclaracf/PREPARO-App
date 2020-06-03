@@ -68,6 +68,7 @@
                 android:drawableEnd="@drawable/ic_right_arrow"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
+                android:id="@+id/botao_form"
                 android:paddingLeft="10dp"/>
 
             <Button

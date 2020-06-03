@@ -154,6 +154,7 @@
                             android:fontFamily="sans-serif"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
+                            android:hint="Ex: Cursando, 1˚Semestre"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
                     </LinearLayout>

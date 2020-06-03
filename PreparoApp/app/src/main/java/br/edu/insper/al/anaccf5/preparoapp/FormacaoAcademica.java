@@ -30,6 +30,8 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
     String institution;
     String course;
     String situation;
+    String processograd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         Button avancar= findViewById(R.id.seguinte);
         fstore = FirebaseFirestore.getInstance();
 
-        Spinner spinner = findViewById(R.id.spinner);
+        final Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classificacao_formacao,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -55,6 +57,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
                 institution = instituicao.getText().toString().trim();
                 course = curso.getText().toString().trim();
                 situation = situacao.getText().toString().trim();
+                processograd = spinner.getSelectedItem().toString();
 
 
                 numeroid = user.getUid();
@@ -63,6 +66,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
                 mapuser.put("instituicao", institution);
                 mapuser.put("curso", course);
                 mapuser.put("situacao", situation);
+                mapuser.put("processograd", processograd);
                 documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

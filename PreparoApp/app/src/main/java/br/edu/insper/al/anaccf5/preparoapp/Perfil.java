@@ -25,6 +25,7 @@ public class Perfil extends AppCompatActivity {
 //    private FirebaseUser user;
 
     private TextView le_nome;
+    private Button Form;
 
 
     private FirebaseFirestore fstore;
@@ -38,6 +39,7 @@ public class Perfil extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         le_nome = (TextView) findViewById(R.id.nomeUser);
+        Form = (Button) findViewById(R.id.botao_form);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -53,17 +55,14 @@ public class Perfil extends AppCompatActivity {
             }
         });
 
-//        log_out.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Conexao.logout();
-//                Intent intent = new Intent(Perfil.this, MainActivity.class);
-//                Perfil.this.startActivity(intent);
-//                Perfil.this.onPause();
-//                user_email.setText("E-mail \n");
-//                le_id.setText("ID \n");
-//            }
-//        });
+        Form.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, FormacaoPerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
     }
 
 //    private void inicializaComponentes() {

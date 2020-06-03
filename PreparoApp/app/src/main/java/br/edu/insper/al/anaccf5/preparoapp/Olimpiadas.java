@@ -153,7 +153,7 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
                     }
                 });
 
-                Intent intent = new Intent(Olimpiadas.this, Perfil.class);
+                Intent intent = new Intent(Olimpiadas.this, AreasInteresse.class);
                 startActivity(intent);
                 Olimpiadas.this.onPause();
             };

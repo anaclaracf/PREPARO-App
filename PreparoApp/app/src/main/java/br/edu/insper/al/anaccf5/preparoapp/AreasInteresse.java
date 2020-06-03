@@ -11,7 +11,5 @@ public class AreasInteresse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_areas_interesse);
-        ImageButton botao = findViewById(R.id.imagem2);
-        botao.setAlpha((float) 0.1);
     }
 }

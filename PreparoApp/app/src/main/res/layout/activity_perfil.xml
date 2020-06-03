@@ -22,105 +22,112 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
+
         <androidx.cardview.widget.CardView
             android:layout_width="364dp"
             android:layout_height="545dp"
-            android:layout_marginTop="85dp"
             android:layout_gravity="center_horizontal"
-            app:cardCornerRadius="15dp" >
+            android:layout_marginTop="85dp"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:id="@+id/nomeUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="95dp"
-                android:text=""
 
-                android:textStyle="bold"
-                android:textSize="25sp"
+                android:text=""
                 android:textColor="@color/colorPrimary"
-                android:layout_gravity="center_horizontal"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cientista de Dados"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="135dp"
-                android:textSize="17sp"
-                android:textColor="@color/colorPrimary"/>
+                android:text="Cientista de Dados"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp" />
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_marginTop="185dp"
-                android:background="@color/colorAccent2"/>
+                android:background="@color/colorAccent2" />
+
             <Button
+                android:id="@+id/botao_form"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="210dp"
-                android:textColor="@color/colorPrimary"
                 android:background="#FFFFFF"
-                android:text="   Formação Acadêmica"
-                android:textAllCaps="false"
-                android:paddingRight="10dp"
-                android:textSize="17dp"
                 android:drawableStart="@drawable/ic_mortarboard"
                 android:drawableEnd="@drawable/ic_right_arrow"
-                style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
-                android:id="@+id/botao_form"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   Formação Acadêmica"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
 
             <Button
+                android:id="@+id/botao_cur"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="290dp"
                 android:background="#FFFFFF"
-                android:text="   Currículo"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                android:drawableEnd="@drawable/ic_right_arrow"
-                android:paddingRight="10dp"
-                style="?android:attr/borderlessButtonStyle"
                 android:drawableStart="@drawable/ic_resume"
+                android:drawableEnd="@drawable/ic_right_arrow"
                 android:gravity="center_vertical"
-                android:id="@+id/botao_cur"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   Currículo"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
+
             <Button
+                android:id="@+id/botao_hab"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="370dp"
                 android:background="#FFFFFF"
-                android:text="   Habilidades"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:drawableEnd="@drawable/ic_right_arrow"
                 android:drawableStart="@drawable/ic_skills"
-                android:paddingRight="10dp"
+                android:drawableEnd="@drawable/ic_right_arrow"
                 android:gravity="center_vertical"
-                android:id="@+id/botao_hab"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   Habilidades"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
+
             <Button
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="450dp"
                 android:background="#FFFFFF"
-                android:text="    Interesses"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:textSize="17dp"
                 android:drawableStart="@drawable/ic_user"
                 android:drawableEnd="@drawable/ic_right_arrow"
-                android:paddingRight="10dp"
-                style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="    Interesses"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/interesse"
+                android:textSize="17dp" />
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>

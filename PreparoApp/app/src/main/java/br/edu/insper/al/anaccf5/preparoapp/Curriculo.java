@@ -61,6 +61,27 @@ public class Curriculo extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance();
 
+        Button avancar = findViewById(R.id.continuar);
+        Button voltar = findViewById(R.id.voltar);
+
+        avancar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Curriculo.this, Habilidades.class);
+                Curriculo.this.startActivity(intent);
+                Curriculo.this.onPause();
+            }
+        });
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Curriculo.this, Localizacao.class);
+                Curriculo.this.startActivity(intent);
+                Curriculo.this.onPause();
+            }
+        });
+
 
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +113,7 @@ public class Curriculo extends AppCompatActivity {
 
                 } else {
 
-                    Toast.makeText(Curriculo.this, "Please select a file!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Curriculo.this, "Escolha um arquivo!", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -110,7 +131,7 @@ public class Curriculo extends AppCompatActivity {
 
         } else {
 
-            Toast.makeText(this, "Please allow external storage reading!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor permita acesso aos arquivos!", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -134,7 +155,7 @@ public class Curriculo extends AppCompatActivity {
 
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
-        progressDialog.setTitle("Uploading File...");
+        progressDialog.setTitle("Carregando o arquivo...");
 
         progressDialog.setProgress(0);
 
@@ -167,13 +188,13 @@ public class Curriculo extends AppCompatActivity {
 
                                                 if (task.isSuccessful()) {
 
-                                                    Toast.makeText(Curriculo.this, "File is uploaded", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(Curriculo.this, "Arquivo carregado", Toast.LENGTH_SHORT).show();
 
                                                     progressDialog.dismiss();
 
                                                 } else {
 
-                                                    Toast.makeText(Curriculo.this, "File upload failed", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(Curriculo.this, "Erro no upload", Toast.LENGTH_SHORT).show();
 
                                                     progressDialog.dismiss();
 
@@ -189,7 +210,7 @@ public class Curriculo extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(Curriculo.this, "ERROR! Something went wrong try again.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Curriculo.this, "ERRO! Alguma coisa deu errado!", Toast.LENGTH_SHORT).show();
 
                 progressDialog.dismiss();
 
@@ -215,11 +236,11 @@ public class Curriculo extends AppCompatActivity {
 
             pdfUri = data.getData();
 
-            mFileStatus.setText("Selected File: " + data.getData().getLastPathSegment());
+            mFileStatus.setText("Arquivo selecionado: " + data.getData().getLastPathSegment());
 
         } else {
 
-            Toast.makeText(this, "Please select a file!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Selecione um arquivo", Toast.LENGTH_SHORT).show();
 
         }
 

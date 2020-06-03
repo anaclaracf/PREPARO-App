@@ -28,7 +28,6 @@ import javax.annotation.Nullable;
 
 public class AreasInteresse extends AppCompatActivity {
 
-    Button avancar;
     private TextView educacao, filosofia, artes, marketing, financas, direito, negocios, informatica,
             arquitetura, ciencias, saude, psicologia;
 
@@ -37,16 +36,39 @@ public class AreasInteresse extends AppCompatActivity {
 
     String userid;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_areas_interesse);
         Button irperfil = findViewById(R.id.ir_perfil);
 
+        Button voltar = findViewById(R.id.voltar);
+        Button avancar = findViewById(R.id.continuar);
 
+        avancar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(AreasInteresse.this, Perfil.class);
                 AreasInteresse.this.startActivity(intent);
                 AreasInteresse.this.onPause();
+            }
+        });
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AreasInteresse.this, Olimpiadas.class);
+                AreasInteresse.this.startActivity(intent);
+                AreasInteresse.this.onPause();
+            }
+        });
+
+
+//                Intent intent = new Intent(AreasInteresse.this, Perfil.class);
+//                AreasInteresse.this.startActivity(intent);
+//                AreasInteresse.this.onPause();
                 auth = FirebaseAuth.getInstance();
 
                 educacao = (TextView) findViewById(R.id.educacao);
@@ -371,6 +393,6 @@ public class AreasInteresse extends AppCompatActivity {
         });
 
     }
-    
+
 }
 

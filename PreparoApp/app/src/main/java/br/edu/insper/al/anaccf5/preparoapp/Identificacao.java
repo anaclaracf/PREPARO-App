@@ -72,7 +72,7 @@ public class Identificacao extends AppCompatActivity {
                             System.out.println("Funcionou!");
                         }
                     });
-                    Intent intent = new Intent(Identificacao.this, Localizacao.class);
+                    Intent intent = new Intent(Identificacao.this, FormacaoAcademica.class);
                     startActivity(intent);
                     Identificacao.this.onPause();
                 }

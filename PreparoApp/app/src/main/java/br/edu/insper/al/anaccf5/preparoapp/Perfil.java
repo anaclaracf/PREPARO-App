@@ -11,21 +11,48 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import javax.annotation.Nullable;
+
 
 public class Perfil extends AppCompatActivity {
 
 //    private FirebaseUser user;
-//
-//    private TextView user_email, le_id;
-//    private Button log_out;
+
+    private TextView le_nome;
+
+
+    private FirebaseFirestore fstore;
+    private FirebaseAuth auth;
+
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-//        inicializaComponentes();
-//
+        le_nome = (TextView) findViewById(R.id.nomeUser);
+
+        auth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+
+        userid = auth.getCurrentUser().getUid();
+
+        DocumentReference documentReference = fstore.collection("candidatos").document(userid);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                le_nome.setText(documentSnapshot.getString("nome").substring(0,1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
+
+            }
+        });
+
 //        log_out.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -37,12 +64,10 @@ public class Perfil extends AppCompatActivity {
 //                le_id.setText("ID \n");
 //            }
 //        });
-//    }
-//
+    }
+
 //    private void inicializaComponentes() {
-//        user_email = (TextView) findViewById(R.id.email_perfil);
-//        le_id = (TextView) findViewById(R.id.id_perfil);
-//        log_out = (Button) findViewById(R.id.logout);
+//
 //    }
 //
 //    @Override
@@ -61,5 +86,4 @@ public class Perfil extends AppCompatActivity {
 //            user_email.setText("E-mail: \n".concat(user.getEmail() + "\n"));
 //            le_id.setText("ID: \n".concat(user.getUid() + "\n"));
 //        }
-    }
 }

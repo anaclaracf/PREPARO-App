@@ -44,6 +44,7 @@
                 android:layout_marginLeft="306dp"
                 android:background="@color/transparent"
                 android:drawableEnd="@drawable/ic_direita"
+                android:id="@+id/seguinte"
                 android:gravity="center_horizontal|top" />
 
             <View
@@ -113,7 +114,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/senha"
+                            android:id="@+id/instituicao"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -142,7 +143,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/curso"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -171,7 +172,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/situacao"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"

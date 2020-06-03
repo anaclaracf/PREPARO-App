@@ -59,23 +59,29 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
                 situation = situacao.getText().toString().trim();
                 processograd = spinner.getSelectedItem().toString();
 
+                if (institution.isEmpty() || course.isEmpty() || situation.isEmpty() || processograd.isEmpty()){
+                    alert("Preencha todos os campos");
+                } else {
 
-                numeroid = user.getUid();
-                DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
-                Map<String,Object> mapuser = new HashMap<>();
-                mapuser.put("instituicao", institution);
-                mapuser.put("curso", course);
-                mapuser.put("situacao", situation);
-                mapuser.put("processograd", processograd);
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
-                Intent intent = new Intent(FormacaoAcademica.this, Localizacao.class);
-                startActivity(intent);
-                FormacaoAcademica.this.onPause();
+
+                    numeroid = user.getUid();
+                    DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
+                    Map<String, Object> mapuser = new HashMap<>();
+                    mapuser.put("instituicao", institution);
+                    mapuser.put("curso", course);
+                    mapuser.put("situacao", situation);
+                    mapuser.put("processograd", processograd);
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    Intent intent = new Intent(FormacaoAcademica.this, Localizacao.class);
+                    startActivity(intent);
+                    FormacaoAcademica.this.onPause();
+
+                }
 
             }
         });

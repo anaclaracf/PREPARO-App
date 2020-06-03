@@ -58,7 +58,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="190dp"
-                android:layout_marginLeft="33dp"
+                android:layout_marginLeft="25dp"
                 android:textColor="@color/colorPrimary"
                 android:background="#FFFFFF"
                 android:text="   Formação Acadêmica"

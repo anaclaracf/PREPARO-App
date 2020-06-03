@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 
 public class FormacaoPerfil extends AppCompatActivity {
 
-    private TextView le_curso,le_insituicao, le_processograd, le_situacao;
+    private TextView le_curso,le_insituicao, le_processograd, le_situacao, le_name;
 
     private FirebaseFirestore fstore;
     private FirebaseAuth auth;
@@ -34,6 +34,7 @@ public class FormacaoPerfil extends AppCompatActivity {
         le_insituicao = (TextView) findViewById(R.id.li_instituicao);
         le_processograd = (TextView) findViewById(R.id.processoGrad);
         le_situacao = (TextView) findViewById(R.id.Situation);
+        le_name = (TextView) findViewById(R.id.nomeUser);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -48,7 +49,7 @@ public class FormacaoPerfil extends AppCompatActivity {
                 le_insituicao.setText(documentSnapshot.getString("instituicao").substring(0, 1).toUpperCase() + documentSnapshot.getString("instituicao").substring(1));
                 le_processograd.setText(documentSnapshot.getString("processograd").substring(0, 1).toUpperCase() + documentSnapshot.getString("processograd").substring(1));
                 le_situacao.setText(documentSnapshot.getString("situacao").substring(0, 1).toUpperCase() + documentSnapshot.getString("situacao").substring(1));
-
+                le_name.setText(documentSnapshot.getString("nome").substring(0, 1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
             }
         });
     }

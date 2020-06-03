@@ -56,7 +56,6 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         });
 
 
-
         final Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classificacao_formacao,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

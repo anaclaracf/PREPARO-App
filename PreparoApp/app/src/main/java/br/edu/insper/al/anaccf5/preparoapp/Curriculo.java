@@ -40,7 +40,7 @@ public class Curriculo extends AppCompatActivity {
     FirebaseStorage storage;
     FirebaseDatabase database;
 //    ProgressDialog progressDialog;
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,22 +109,31 @@ public class Curriculo extends AppCompatActivity {
 
         final String fileName = System.currentTimeMillis() + "";
         StorageReference storageReference = storage.getReference();
-        storageReference.child("uploads").child(fileName).putFile(pdfUri)
+        storageReference.child("Uploads").child(fileName).putFile(pdfUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        String url = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-                        DatabaseReference reference = database.getReference();
-                        reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                        task.addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful())
-                                    Toast.makeText(Curriculo.this, "Upload feito com sucesso!", Toast.LENGTH_SHORT).show();
-                                else
-                                    Toast.makeText(Curriculo.this, "Erro no upload", Toast.LENGTH_SHORT).show();
+                            public void onSuccess(Uri uri) {
+                                String url = uri.toString();
+                                DatabaseReference myRef = database.getReference();
+                                myRef.child(fileName).setValue(url)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(Curriculo.this, "File is uploaded", Toast.LENGTH_SHORT).show();
+
+                                                } else {
+                                                    Toast.makeText(Curriculo.this, "File upload failed", Toast.LENGTH_SHORT).show();
+
+                                                }
+                                            }
+                                        });
                             }
                         });
-
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override

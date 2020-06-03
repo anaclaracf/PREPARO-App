@@ -244,14 +244,6 @@ public class AreasInteresse extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                mapuser.put("interesses12"," ");
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
-
                 Intent intent = new Intent(AreasInteresse.this, Perfil.class);
                 startActivity(intent);
                 AreasInteresse.this.onPause();

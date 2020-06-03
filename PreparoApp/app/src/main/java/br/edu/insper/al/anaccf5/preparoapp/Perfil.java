@@ -25,7 +25,7 @@ public class Perfil extends AppCompatActivity {
 //    private FirebaseUser user;
 
     private TextView le_nome;
-    private Button Form;
+    private Button Form, Cur,Hab;
 
 
     private FirebaseFirestore fstore;
@@ -40,6 +40,8 @@ public class Perfil extends AppCompatActivity {
 
         le_nome = (TextView) findViewById(R.id.nomeUser);
         Form = (Button) findViewById(R.id.botao_form);
+        Cur = (Button) findViewById(R.id.botao_cur);
+        Hab = (Button) findViewById(R.id.botao_hab);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -59,6 +61,22 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Perfil.this, FormacaoPerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
+        Cur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, CurriculoPerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
+        Hab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, HabilidadesPerfil.class);
                 Perfil.this.startActivity(intent);
                 Perfil.this.onPause();
             }

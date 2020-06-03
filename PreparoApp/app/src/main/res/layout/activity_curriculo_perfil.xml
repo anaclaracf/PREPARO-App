@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Perfil">
+    tools:context=".CurriculoPerfil">
 
     <ImageView
         android:layout_width="150dp"
@@ -53,74 +53,37 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="185dp"
                 android:background="@color/colorAccent2"/>
-            <Button
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="210dp"
+                android:layout_marginTop="190dp"
                 android:textColor="@color/colorPrimary"
-                android:background="#FFFFFF"
-                android:text="   Formação Acadêmica"
-                android:textAllCaps="false"
-                android:paddingRight="10dp"
-                android:textSize="17dp"
-                android:drawableStart="@drawable/ic_mortarboard"
-                android:drawableEnd="@drawable/ic_right_arrow"
-                style="?android:attr/borderlessButtonStyle"
-                android:gravity="center_vertical"
-                android:id="@+id/botao_form"
-                android:paddingLeft="10dp"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="290dp"
                 android:background="#FFFFFF"
                 android:text="   Currículo"
-                android:textColor="@color/colorPrimary"
                 android:textAllCaps="false"
-                android:textSize="17dp"
-                android:drawableEnd="@drawable/ic_right_arrow"
                 android:paddingRight="10dp"
-                style="?android:attr/borderlessButtonStyle"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:drawableStart="@drawable/ic_resume"
-                android:gravity="center_vertical"
-                android:id="@+id/botao_cur"
-                android:paddingLeft="10dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="370dp"
-                android:background="#FFFFFF"
-                android:text="   Habilidades"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:drawableEnd="@drawable/ic_right_arrow"
-                android:drawableStart="@drawable/ic_skills"
-                android:paddingRight="10dp"
-                android:gravity="center_vertical"
-                android:id="@+id/botao_hab"
-                android:paddingLeft="10dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="450dp"
-                android:background="#FFFFFF"
-                android:text="    Interesses"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                android:drawableStart="@drawable/ic_user"
-                android:drawableEnd="@drawable/ic_right_arrow"
-                android:paddingRight="10dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"/>
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="90dp"
+                android:text="Insira seu Currículo aqui"
+                android:background="@drawable/btn_bg"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="sans-serif"
+                android:textSize="15dp"
+
+                />
+
+
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>

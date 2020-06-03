@@ -90,13 +90,12 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/senha"
+                            android:id="@+id/cep"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/btn_bg"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
@@ -120,13 +119,12 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/endereco"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/btn_bg"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
@@ -150,13 +148,12 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/bairro"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/btn_bg"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
@@ -180,13 +177,12 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/cidade"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/btn_bg"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
@@ -210,13 +206,12 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/confirmation_senha"
+                            android:id="@+id/estado"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/btn_bg"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
@@ -242,7 +237,7 @@
                             android:textSize="15sp" />
 
                         <EditText
-                            android:id="@+id/email"
+                            android:id="@+id/complemento"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
@@ -265,7 +260,7 @@
                     android:gravity="center_horizontal">
 
                     <Button
-                        android:id="@+id/cadastro"
+                        android:id="@+id/preencherDepois"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:background="@drawable/btn_bg"

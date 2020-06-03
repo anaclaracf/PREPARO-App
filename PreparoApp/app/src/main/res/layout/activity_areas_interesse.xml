@@ -76,8 +76,8 @@
                         tools:layout_editor_absolutY="160dp"
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
-                        android:alpha="0.6"
                         android:scaleType="centerCrop"
+                        android:alpha="0.6"
                         app:srcCompat="@drawable/education"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -213,7 +213,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ciencia"
+                        app:srcCompat="@drawable/ciencias"
                         android:alpha="0.6"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -239,6 +239,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/direito"
                         android:scaleType="centerCrop"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -264,6 +265,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/financias"
                         android:scaleType="centerCrop"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -289,6 +291,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/informatica"
                         android:scaleType="centerCrop"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -314,6 +317,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/marketing"
                         android:scaleType="centerCrop"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
@@ -340,6 +344,7 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/psicologia"
                         android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
@@ -363,6 +368,7 @@
                         tools:layout_editor_absolutY="160dp"
                         tools:layout_editor_absolutX="160dp"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/saude"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
                         android:background="@drawable/btn_bg"

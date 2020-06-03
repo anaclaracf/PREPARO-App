@@ -46,6 +46,19 @@ public class Localizacao extends AppCompatActivity {
         Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
 
+        Button perfil5= findViewById(R.id.ir_perfil5);
+
+        perfil5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Localizacao.this, Perfil.class);
+                Localizacao.this.startActivity(intent);
+                Localizacao.this.onPause();
+            }
+        });
+
+
+
         voltar.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -15,6 +15,18 @@ public class Curriculo extends AppCompatActivity {
         setContentView(R.layout.activity_curriculo);
         Button avancar = findViewById(R.id.continuar);
 
+        Button perfil6= findViewById(R.id.ir_perfil6);
+
+        perfil6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Curriculo.this, Perfil.class);
+                Curriculo.this.startActivity(intent);
+                Curriculo.this.onPause();
+            }
+        });
+
+
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

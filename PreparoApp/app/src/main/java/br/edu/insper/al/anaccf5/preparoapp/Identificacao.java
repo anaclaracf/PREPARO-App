@@ -43,6 +43,18 @@ public class Identificacao extends AppCompatActivity {
         Button avancar= findViewById(R.id.continuar);
         fstore = FirebaseFirestore.getInstance();
 
+        Button perfil4= findViewById(R.id.ir_perfil4);
+
+        perfil4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Identificacao.this, Perfil.class);
+                Identificacao.this.startActivity(intent);
+                Identificacao.this.onPause();
+            }
+        });
+
+
 
         avancar.setOnClickListener(new View.OnClickListener() {
 

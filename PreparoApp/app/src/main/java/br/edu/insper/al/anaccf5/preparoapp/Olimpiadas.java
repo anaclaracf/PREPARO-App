@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,8 +43,26 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olimpiadas);
 
-        Button avancar = findViewById(R.id.continuar);
+        Button avancarr = findViewById(R.id.continuarr);
         fstore = FirebaseFirestore.getInstance();
+
+        Button perfil2= findViewById(R.id.ir_perfil2);
+
+        perfil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Olimpiadas.this, Perfil.class);
+                Olimpiadas.this.startActivity(intent);
+                Olimpiadas.this.onPause();
+            }
+        });
+        avancarr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)  {
+                Toast.makeText(getApplicationContext(), "Cadastro finalizado!" , Toast.LENGTH_SHORT ).show();
+            }
+        });
+
 
 
         final Spinner spinner8 = findViewById(R.id.spinner_8);
@@ -113,7 +132,7 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
         spinner18.setOnItemSelectedListener(this);
 
 
-        avancar.setOnClickListener(new View.OnClickListener() {
+        avancarr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

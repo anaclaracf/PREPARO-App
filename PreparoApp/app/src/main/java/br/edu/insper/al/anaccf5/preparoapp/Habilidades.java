@@ -41,6 +41,18 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         Button avancar = findViewById(R.id.continuar);
         fstore = FirebaseFirestore.getInstance();
 
+        Button perfil3= findViewById(R.id.ir_perfil3);
+
+        perfil3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Habilidades.this, Perfil.class);
+                Habilidades.this.startActivity(intent);
+                Habilidades.this.onPause();
+            }
+        });
+
+
         final Spinner spinner1 = findViewById(R.id.spinner_1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.classificacao_habilidades,android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

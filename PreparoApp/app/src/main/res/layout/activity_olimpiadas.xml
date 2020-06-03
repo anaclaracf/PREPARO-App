@@ -43,7 +43,7 @@
                 android:drawableStart="@drawable/ic_esquerda" />
 
             <Button
-                android:id="@+id/continuar"
+                android:id="@+id/continuarr"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="306dp"
@@ -72,8 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_login"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="12dp"
                     android:layout_marginTop="80dp"
+                    android:layout_marginRight="12dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -428,7 +428,7 @@
                     android:gravity="center_horizontal">
 
                     <Button
-                        android:id="@+id/cadastro"
+                        android:id="@+id/ir_perfil2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:background="@drawable/btn_bg"

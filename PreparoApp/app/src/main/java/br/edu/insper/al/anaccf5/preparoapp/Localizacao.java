@@ -45,6 +45,18 @@ public class Localizacao extends AppCompatActivity {
         Button avancar= findViewById(R.id.continuar);
         fstore = FirebaseFirestore.getInstance();
 
+        Button perfil5= findViewById(R.id.ir_perfil5);
+
+        perfil5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Localizacao.this, Perfil.class);
+                Localizacao.this.startActivity(intent);
+                Localizacao.this.onPause();
+            }
+        });
+
+
 
         avancar.setOnClickListener(new View.OnClickListener() {
 

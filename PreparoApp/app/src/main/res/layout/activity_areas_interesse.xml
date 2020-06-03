@@ -21,6 +21,7 @@
             android:layout_height="1300dp"
             android:layout_gravity="center"
             android:layout_marginTop="730dp"
+            android:layout_marginBottom="25dp"
             app:cardCornerRadius="15dp">
 
             <TextView
@@ -75,10 +76,10 @@
                         tools:layout_editor_absolutY="160dp"
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
-                        android:alpha="0.6"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
+                        android:alpha="0.6"
                         app:srcCompat="@drawable/education"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
 
@@ -106,8 +107,8 @@
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
                         android:alpha="0.6"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/filosofia"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -133,8 +134,8 @@
                         android:alpha="0.6"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/arquitetura"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -161,8 +162,8 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/artes"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -186,9 +187,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/business"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -212,9 +213,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ciencias"
                         android:alpha="0.6"
-                        android:background="@drawable/redondo_fotos"
-                        app:srcCompat="@drawable/ciencia"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -238,9 +239,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/direito"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -264,9 +265,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/financias"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -290,9 +291,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/informatica"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -316,9 +317,9 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:alpha="0.6"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/marketing"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -343,8 +344,8 @@
                         tools:layout_editor_absolutX="160dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
                         app:srcCompat="@drawable/psicologia"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView
@@ -367,10 +368,10 @@
                         tools:layout_editor_absolutY="160dp"
                         tools:layout_editor_absolutX="160dp"
                         android:alpha="0.6"
+                        app:srcCompat="@drawable/saude"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/redondo_fotos"
-                        app:srcCompat="@drawable/saude"
+                        android:background="@drawable/btn_bg"
                         android:layout_marginBottom="15dp">
                     </ImageButton>
                     <TextView

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "951127086915-qra6coc7eofdmao7nv8to3fr26smjjdp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.insper.al.anaccf5.preparoapp",
+            "certificate_hash": "4cee97eb4cfef53999e892967538ea18c992d6a1"
+          }
+        },
+        {
           "client_id": "951127086915-rlua1c6gm2ti3jgc2cg4l6302cseg8l0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

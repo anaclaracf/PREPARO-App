@@ -17,5 +17,13 @@
         <item>Seletiva</item>
     </string-array>
 
+    <string-array name="classificacao_formacao">
+        <item>Nenhum item selecionado</item>
+        <item>Graduação</item>
+        <item>Pós Graduação</item>
+        <item>Doutorado</item>
+        <item>Mestrado</item>
+    </string-array>
+
 
 </resources>

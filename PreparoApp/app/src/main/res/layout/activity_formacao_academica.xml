@@ -70,32 +70,6 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="09dp">
 
-                    <!--                    <LinearLayout-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:orientation="vertical">-->
-
-                    <!--                        <TextView-->
-                    <!--                            android:layout_width="wrap_content"-->
-                    <!--                            android:layout_height="wrap_content"-->
-                    <!--                            android:layout_marginLeft="10dp"-->
-                    <!--                            android:fontFamily="sans-serif"-->
-                    <!--                            android:text="Email"-->
-                    <!--                            android:textAllCaps="true"-->
-                    <!--                            android:textColor="@color/colorPrimary"-->
-                    <!--                            android:textSize="15sp" />-->
-
-                    <!--                        <EditText-->
-                    <!--                            android:id="@+id/email"-->
-                    <!--                            android:layout_width="match_parent"-->
-                    <!--                            android:layout_height="40dp"-->
-                    <!--                            android:layout_marginTop="5dp"-->
-                    <!--                            android:background="@drawable/btn_bg"-->
-                    <!--                            android:fontFamily="sans-serif"-->
-                    <!--                            android:textColor="@color/colorPrimary"-->
-                    <!--                            android:textSize="15sp" />-->
-                    <!--                    </LinearLayout>-->
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -185,6 +159,37 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="sans-serif"
+                            android:text="Nível de Formação *"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
+                            android:fontFamily="sans-serif"
+                            android:inputType="textPassword"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
 
 
                 </LinearLayout>

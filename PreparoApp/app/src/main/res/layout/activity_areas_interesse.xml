@@ -85,6 +85,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:id="@+id/educacao"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:clickable="false"
@@ -114,6 +115,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/filosofia"
                         android:layout_gravity="center"
                         android:clickable="false"
                         android:textSize="25sp"
@@ -140,6 +142,7 @@
                     </ImageButton>
                     <TextView
                         android:layout_width="wrap_content"
+                        android:id="@+id/arquitetura"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:clickable="false"
@@ -171,6 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:clickable="false"
+                        android:id="@+id/artes"
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
@@ -200,6 +204,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/negocios"
                         android:text="Negócios" />
                 </FrameLayout>
 
@@ -226,6 +231,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/ciencias"
                         android:text="Ciências"/>
                 </FrameLayout>
 
@@ -252,6 +258,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/direito"
                         android:text="Direito" />
                 </FrameLayout>
 
@@ -278,6 +285,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/financas"
                         android:text="Finanças" />
                 </FrameLayout>
 
@@ -304,6 +312,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/informatica"
                         android:text="Informática" />
                 </FrameLayout>
 
@@ -330,6 +339,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/marketing"
                         android:text="Marketing" />
                 </FrameLayout>
 
@@ -356,6 +366,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/psicologia"
                         android:text="Psicologia" />
                 </FrameLayout>
 
@@ -382,6 +393,7 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
+                        android:id="@+id/saude"
                         android:text="Saúde" />
                 </FrameLayout>
             </GridLayout>

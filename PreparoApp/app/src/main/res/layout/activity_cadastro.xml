@@ -144,7 +144,7 @@
                 android:paddingRight="70dp"
                 android:layout_centerHorizontal="true"
                 android:textAllCaps="false"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/btn_bg1"
                 android:layout_marginTop="50dp"
                 android:id="@+id/button_cadastro"/>
 

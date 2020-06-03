@@ -202,7 +202,7 @@
                     android:layout_marginTop="450dp"
                     android:id="@+id/rellay2">
                     <Button
-                        android:id="@+id/cadastro"
+                        android:id="@+id/ir_perfil1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:background="@drawable/btn_bg"

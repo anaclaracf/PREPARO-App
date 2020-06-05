@@ -61,6 +61,10 @@ public class Curriculo extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance();
 
+        Button avancar= findViewById(R.id.continuar);
+        Button voltar = findViewById(R.id.voltar);
+
+
 
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +99,29 @@ public class Curriculo extends AppCompatActivity {
 
                 }
 
+            }
+        });
+
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Curriculo.this, Localizacao.class);
+                startActivity(intent);
+                Curriculo.this.onPause();
+            }
+        });
+
+        avancar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Curriculo.this, Habilidades.class);
+                startActivity(intent);
+                Curriculo.this.onPause();
             }
         });
 

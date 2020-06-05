@@ -27,7 +27,6 @@ public class AreasInteresse extends AppCompatActivity {
 
     private FirebaseFirestore fstore;
     private FirebaseAuth auth;
-
     String userid;
 
     Button avancar;

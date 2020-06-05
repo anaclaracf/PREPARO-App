@@ -45,6 +45,8 @@ public class Localizacao extends AppCompatActivity {
         Button avancar= findViewById(R.id.continuar);
         Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
+        FirebaseAuth auth = Conexao.getFirebaseAuth();
+        user = Conexao.getFirebaseUser();
 
         voltar.setOnClickListener(new View.OnClickListener() {
 
@@ -95,18 +97,4 @@ public class Localizacao extends AppCompatActivity {
         Toast.makeText(Localizacao.this,msg,Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseAuth auth = Conexao.getFirebaseAuth();
-        user = Conexao.getFirebaseUser();
-        numeroid = user.getUid();
-        verificaUser();
-    }
-
-    private void verificaUser() {
-        if (user == null){
-            finish();
-        }
-    }
 }

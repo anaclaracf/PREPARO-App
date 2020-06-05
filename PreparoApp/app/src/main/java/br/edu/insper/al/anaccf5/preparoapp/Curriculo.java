@@ -23,13 +23,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Curriculo extends AppCompatActivity {
 
@@ -41,6 +47,13 @@ public class Curriculo extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
 
     private FirebaseStorage mStorage;
+
+    private FirebaseFirestore fstore;
+    private FirebaseAuth auth;
+    String userid;
+
+    DocumentReference documentReference;
+    Map<String, Object> mapuser;
 
     private Uri pdfUri;
 
@@ -63,6 +76,12 @@ public class Curriculo extends AppCompatActivity {
 
         Button avancar= findViewById(R.id.continuar);
         Button voltar = findViewById(R.id.voltar);
+
+        auth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+
+
+        mapuser = new HashMap<>();
 
 
 
@@ -183,30 +202,22 @@ public class Curriculo extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
 
                                 String url = uri.toString();
+                                System.out.println(url);
+                                userid = auth.getCurrentUser().getUid();
+                                documentReference = fstore.collection("candidatos").document(userid);
 
-                                DatabaseReference myRef = mDatabase.getReference();
+                                // INSERIR AQUI A CONEXÃO COM O NOSSO FIREBASE
 
-                                myRef.child(fileName).setValue(url)
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
+                                mapuser.put("uriCurriculo", url);
+                                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        System.out.println("Funcionou!");
+                                        progressDialog.setTitle("Upload ready");
+                                        progressDialog.dismiss();
+                                    }
+                                });
 
-                                                if (task.isSuccessful()) {
-
-                                                    Toast.makeText(Curriculo.this, "File is uploaded", Toast.LENGTH_SHORT).show();
-
-                                                    progressDialog.dismiss();
-
-                                                } else {
-
-                                                    Toast.makeText(Curriculo.this, "File upload failed", Toast.LENGTH_SHORT).show();
-
-                                                    progressDialog.dismiss();
-
-                                                }
-
-                                            }
-                                        });
 
                             }
                         });

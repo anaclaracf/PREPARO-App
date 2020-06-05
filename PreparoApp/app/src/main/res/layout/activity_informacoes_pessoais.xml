@@ -124,7 +124,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textPersonName"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -153,7 +154,9 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textPersonName
+"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -182,7 +185,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="phone"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -211,7 +215,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textUri"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -240,7 +245,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textUri"/>
                     </LinearLayout>
                 </LinearLayout>
                 <!--            <RelativeLayout-->

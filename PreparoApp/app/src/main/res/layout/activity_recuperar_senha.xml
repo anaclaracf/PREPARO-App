@@ -68,7 +68,8 @@
                             android:fontFamily="sans-serif"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
-                            android:layout_marginTop="5dp"/>
+                            android:layout_marginTop="5dp"
+                            android:inputType="textWebEmailAddress"/>
                     </LinearLayout>
                 </LinearLayout>
                 <Button
@@ -84,7 +85,7 @@
                     android:paddingRight="70dp"
                     android:layout_centerHorizontal="true"
                     android:textAllCaps="false"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/btn_bg1"
                     android:layout_marginTop="50dp" />
 
             </RelativeLayout>

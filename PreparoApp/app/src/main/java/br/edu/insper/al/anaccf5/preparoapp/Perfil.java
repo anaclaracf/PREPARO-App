@@ -2,7 +2,6 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -25,7 +23,7 @@ public class Perfil extends AppCompatActivity {
 //    private FirebaseUser user;
 
     private TextView le_nome;
-    private Button Form;
+    private Button Form, Hab, Cur, Int;
 
 
     private FirebaseFirestore fstore;
@@ -40,6 +38,9 @@ public class Perfil extends AppCompatActivity {
 
         le_nome = (TextView) findViewById(R.id.nomeUser);
         Form = (Button) findViewById(R.id.botao_form);
+        Hab = (Button) findViewById(R.id.button_habilidades);
+        Cur = (Button) findViewById(R.id.button_curriculo);
+        Int = (Button) findViewById(R.id.button_interesses);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -63,26 +64,33 @@ public class Perfil extends AppCompatActivity {
                 Perfil.this.onPause();
             }
         });
-    }
 
-//    private void inicializaComponentes() {
-//
-//    }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        FirebaseAuth auth = Conexao.getFirebaseAuth();
-//        user = Conexao.getFirebaseUser();
-//        verificaUser();
-//    }
-//
-//    @SuppressLint("SetTextI18n")
-//    private void verificaUser() {
-//        if (user == null){
-//            finish();
-//        } else {
-//            user_email.setText("E-mail: \n".concat(user.getEmail() + "\n"));
-//            le_id.setText("ID: \n".concat(user.getUid() + "\n"));
-//        }
+        Hab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, HabilidadesPerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
+
+        Cur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, CurriculoPerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
+
+        Int.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Perfil.this, AreasInteressePerfil.class);
+                Perfil.this.startActivity(intent);
+                Perfil.this.onPause();
+            }
+        });
+
+    }
 }

@@ -91,7 +91,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Educação" >
+                        android:text="Educação"
+                        android:id="@+id/educacao">
                     </TextView>
 
                 </FrameLayout>
@@ -119,7 +120,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Filosofia" >
+                        android:text="Filosofia"
+                        android:id="@+id/filosofia">
                     </TextView>
                 </FrameLayout>
 
@@ -146,7 +148,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Arquitetura" >
+                        android:text="Arquitetura"
+                        android:id="@+id/arquitetura">
                     </TextView>
                 </FrameLayout>
 
@@ -174,7 +177,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Artes" />
+                        android:text="Artes"
+                        android:id="@+id/artes"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -200,7 +204,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Negócios" />
+                        android:text="Negócios"
+                        android:id="@+id/negocios"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -226,7 +231,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Ciências"/>
+                        android:text="Ciências"
+                        android:id="@+id/ciencias"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -252,7 +258,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Direito" />
+                        android:text="Direito"
+                        android:id="@+id/direito"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -278,7 +285,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Finanças" />
+                        android:text="Finanças"
+                        android:id="@+id/financas"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -304,7 +312,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Informática" />
+                        android:text="Informática"
+                        android:id="@+id/informatica"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -330,7 +339,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Marketing" />
+                        android:text="Marketing"
+                        android:id="@+id/marketing"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -356,7 +366,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Psicologia" />
+                        android:text="Psicologia"
+                        android:id="@+id/psicologia"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -382,7 +393,8 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:text="Saúde" />
+                        android:text="Saúde"
+                        android:id="@+id/saude"/>
                 </FrameLayout>
             </GridLayout>
 

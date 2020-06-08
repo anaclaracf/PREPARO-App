@@ -49,9 +49,9 @@ public class AreasInteressePerfil extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
 
 
-                for (String lo_chico : documentSnapshot.getData().keySet()){
-                    if (lo_chico.length() > 8){
-                        if (lo_chico.substring(0,9).equals("interesse")){
+                for (String lo_chico : documentSnapshot.getData().keySet()) {
+                    if (lo_chico.length() > 8) {
+                        if (lo_chico.substring(0, 9).equals("interesse")) {
                             estudos += " " + (documentSnapshot.getString(lo_chico)) + ",";
                         }
                     }
@@ -60,7 +60,8 @@ public class AreasInteressePerfil extends AppCompatActivity {
 
                 le_name.setText(documentSnapshot.getString("nome").substring(0, 1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
                 System.out.println(estudos);
-                os_interesses.setText(estudos.substring(0,estudos.length()-1));
+                os_interesses.setText(estudos.substring(0, estudos.length() - 1));
+
             }
         });
 

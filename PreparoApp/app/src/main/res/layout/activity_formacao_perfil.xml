@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="470dp"
+        android:layout_marginBottom="510dp"
         android:background="?selectableItemBackgroundBorderless"
         android:elevation="1dp"
         android:src="@drawable/paul"/>

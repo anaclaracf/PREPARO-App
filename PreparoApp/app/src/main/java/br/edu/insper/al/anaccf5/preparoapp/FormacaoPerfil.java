@@ -41,15 +41,54 @@ public class FormacaoPerfil extends AppCompatActivity {
 
         userid = auth.getCurrentUser().getUid();
 
-        DocumentReference documentReference = fstore.collection("candidatos").document(userid);
+        final DocumentReference documentReference = fstore.collection("candidatos").document(userid);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                le_curso.setText(documentSnapshot.getString("curso").substring(0, 1).toUpperCase() + documentSnapshot.getString("curso").substring(1));
-                le_insituicao.setText(documentSnapshot.getString("instituicao").substring(0, 1).toUpperCase() + documentSnapshot.getString("instituicao").substring(1));
-                le_processograd.setText(documentSnapshot.getString("processograd").substring(0, 1).toUpperCase() + documentSnapshot.getString("processograd").substring(1));
-                le_situacao.setText(documentSnapshot.getString("situacao").substring(0, 1).toUpperCase() + documentSnapshot.getString("situacao").substring(1));
-                le_name.setText(documentSnapshot.getString("nome").substring(0, 1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
+                if (documentSnapshot.contains("curso")) {
+                    le_curso.setText(documentSnapshot.getString("curso").substring(0, 1).toUpperCase() + documentSnapshot.getString("curso").substring(1));
+                } else {
+
+                    le_curso.setText("");
+                }
+                if (documentSnapshot.contains("instituicao")) {
+
+                    le_insituicao.setText(documentSnapshot.getString("instituicao").substring(0, 1).toUpperCase() + documentSnapshot.getString("instituicao").substring(1));
+
+                }else {
+
+
+                    le_insituicao.setText("");
+
+                }
+                if (documentSnapshot.contains("processograd")) {
+
+                    le_processograd.setText(documentSnapshot.getString("processograd").substring(0, 1).toUpperCase() + documentSnapshot.getString("processograd").substring(1));
+
+                }else {
+
+                    le_processograd.setText("Nao foi preenchido");
+                }
+                if (documentSnapshot.contains("situacao")) {
+
+                    le_situacao.setText(documentSnapshot.getString("situacao").substring(0, 1).toUpperCase() + documentSnapshot.getString("situacao").substring(1));
+
+                }else {
+
+
+                    le_situacao.setText("");
+
+                }
+                if (documentSnapshot.contains("instituicao")) {
+
+                    le_situacao.setText(documentSnapshot.getString("situacao").substring(0, 1).toUpperCase() + documentSnapshot.getString("situacao").substring(1));
+
+                }else {
+
+
+                    le_situacao.setText("");
+
+                }
             }
         });
     }

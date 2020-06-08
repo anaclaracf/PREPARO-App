@@ -48,30 +48,33 @@ public class HabilidadesPerfil extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (documentSnapshot.contains("AI")) {
 
-                if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")){
-                    le_situacaoHab6.setText(documentSnapshot.getString("AI"));
-                }
-                if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")){
-                    le_situacaoHab5.setText(documentSnapshot.getString("python"));
-                }
-                if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")){
-                    le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
-                }
-                if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")){
-                    le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
-                }
-                if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")){
-                    le_situacaoHab4.setText(documentSnapshot.getString("R"));
-                }
-                if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")){
-                    le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
-                }
-                if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")){
-                    le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
-                }
+                        if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")) {
+                            le_situacaoHab6.setText(documentSnapshot.getString("AI"));
+                        }
+                        if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")) {
+                            le_situacaoHab5.setText(documentSnapshot.getString("python"));
+                        }
+                        if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")) {
+                            le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
+                        }
+                        if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")) {
+                            le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
+                        }
+                        if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")) {
+                            le_situacaoHab4.setText(documentSnapshot.getString("R"));
+                        }
+                        if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")) {
+                            le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
+                        }
+                        if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")) {
+                            le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
+                        }
+                    }
 
-                le_name.setText(documentSnapshot.getString("nome"));
+                    le_name.setText(documentSnapshot.getString("nome"));
+
             }
         });
     }

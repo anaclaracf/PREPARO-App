@@ -42,6 +42,8 @@ public class Identificacao extends AppCompatActivity {
         final EditText generoUser = findViewById(R.id.genero);
         Button avancar= findViewById(R.id.continuar);
         Button voltar= findViewById(R.id.voltar);
+        Button preecherDepois=findViewById(R.id.preencherDepois);
+
         fstore = FirebaseFirestore.getInstance();
 
         voltar.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +52,17 @@ public class Identificacao extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Identificacao.this, InformacoesPessoais.class);
+                startActivity(intent);
+                Identificacao.this.onPause();
+
+            }
+        });
+        preecherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Identificacao.this, Perfil.class);
                 startActivity(intent);
                 Identificacao.this.onPause();
 

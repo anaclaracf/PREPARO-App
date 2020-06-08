@@ -34,6 +34,7 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
     String ai;
     String m_learning;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         Button avancar = findViewById(R.id.continuar);
         Button voltar= findViewById(R.id.voltar);
         fstore = FirebaseFirestore.getInstance();
+        Button preencherDepois= findViewById(R.id.preencherDepois);
 
         final Spinner spinner1 = findViewById(R.id.spinner_1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.classificacao_habilidades,android.R.layout.simple_spinner_item);
@@ -98,6 +100,9 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         });
 
 
+
+
+
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +136,42 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
 
             };
         });
+
+
+        preencherDepois.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                estatistica = spinner1.getSelectedItem().toString();
+                modelagem = spinner2.getSelectedItem().toString();
+                mod_fin = spinner3.getSelectedItem().toString();
+                hab_R = spinner4.getSelectedItem().toString();
+                python = spinner5.getSelectedItem().toString();
+                ai = spinner6.getSelectedItem().toString();
+                m_learning = spinner7.getSelectedItem().toString();
+
+                numeroid = user.getUid();
+                DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
+                Map<String,Object> mapuser = new HashMap<>();
+                mapuser.put("estatistica", estatistica);
+                mapuser.put("modelagem", modelagem);
+                mapuser.put("modelagem financeira", mod_fin);
+                mapuser.put("R", hab_R);
+                mapuser.put("python", python);
+                mapuser.put("AI", ai);
+                mapuser.put("machine learning", m_learning);
+                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        System.out.println("Funcionou!");
+                    }
+                });
+                Intent intent = new Intent(Habilidades.this, Perfil.class);
+                startActivity(intent);
+                Habilidades.this.onPause();
+
+            };
+        });
+
 
     }
 

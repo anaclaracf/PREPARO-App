@@ -7,15 +7,6 @@
     android:background="@drawable/background"
     tools:context=".Perfil">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="510dp"
-        android:background="?selectableItemBackgroundBorderless"
-        android:elevation="1dp"
-        android:src="@drawable/paul"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,43 +15,42 @@
         android:orientation="vertical">
         <androidx.cardview.widget.CardView
             android:layout_width="364dp"
-            android:layout_height="545dp"
-            android:layout_marginTop="85dp"
+            android:layout_height="585dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="15dp" >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:elevation="1dp"
+                android:src="@drawable/paul"/>
 
             <TextView
                 android:id="@+id/nomeUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="95dp"
-                android:text=""
-
+                android:layout_marginTop="175dp"
+                android:text="nome"
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:textColor="@color/colorPrimary"
                 android:layout_gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cientista de Dados"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="135dp"
-                android:textSize="17sp"
-                android:textColor="@color/colorPrimary"/>
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_marginTop="185dp"
+                android:layout_marginTop="215dp"
                 android:background="@color/colorAccent2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="190dp"
+                android:layout_marginTop="220dp"
                 android:layout_marginLeft="25dp"
                 android:textColor="@color/colorPrimary"
-                android:background="#FFFFFF"
                 android:text="   Formação Acadêmica"
                 android:textAllCaps="false"
                 android:paddingRight="10dp"

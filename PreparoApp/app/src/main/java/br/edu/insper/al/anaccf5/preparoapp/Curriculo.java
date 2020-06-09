@@ -76,6 +76,7 @@ public class Curriculo extends AppCompatActivity {
 
         Button avancar= findViewById(R.id.continuar);
         Button voltar = findViewById(R.id.voltar);
+        Button preecherDepois=findViewById(R.id.preencherDepois);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -130,6 +131,18 @@ public class Curriculo extends AppCompatActivity {
                 Intent intent = new Intent(Curriculo.this, Localizacao.class);
                 startActivity(intent);
                 Curriculo.this.onPause();
+            }
+        });
+
+        preecherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Curriculo.this, Perfil.class);
+                startActivity(intent);
+                Curriculo.this.onPause();
+
             }
         });
 

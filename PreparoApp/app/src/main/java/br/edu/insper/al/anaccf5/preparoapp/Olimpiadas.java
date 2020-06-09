@@ -44,6 +44,7 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
 
         Button avancar = findViewById(R.id.continuar);
         Button voltar = findViewById(R.id.voltar);
+        Button preecherDepois=findViewById(R.id.preencherDepois);
         fstore = FirebaseFirestore.getInstance();
 
 
@@ -168,6 +169,18 @@ public class Olimpiadas extends AppCompatActivity implements AdapterView.OnItemS
                 Intent intent = new Intent(Olimpiadas.this, Habilidades.class);
                 startActivity(intent);
                 Olimpiadas.this.onPause();
+            }
+        });
+
+        preecherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Olimpiadas.this, Perfil.class);
+                startActivity(intent);
+                Olimpiadas.this.onPause();
+
             }
         });
 

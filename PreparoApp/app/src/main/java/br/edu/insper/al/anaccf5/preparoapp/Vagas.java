@@ -4,9 +4,12 @@ package br.edu.insper.al.anaccf5.preparoapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -14,40 +17,53 @@ import android.widget.TextView;
 
 public class Vagas extends AppCompatActivity {
 
+    ScrollView sv;
+    LinearLayout ll;
+
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vagas);
 
+        sv = (ScrollView) findViewById(R.id.sv);
+        ll = (LinearLayout) findViewById(R.id.ll);
 
-        //criação da ScrollView
-        ScrollView sv = new ScrollView(this);
-        FrameLayout.LayoutParams lpsv = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-        sv.setBackgroundResource(R.drawable.grad_bg);
-        sv.setLayoutParams(lpsv);
+        mContext = getApplicationContext();
 
-        LinearLayout ll = new LinearLayout(this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams lpll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-        ll.setLayoutParams(lpll);
-        sv.addView(ll);
+        for(int i=0;i<5;i++){
 
-        for(int i=0;i<50;i++){
+            CardView card = new CardView(mContext);
 
-            CardView cardView = new CardView(this);
-            CardView.LayoutParams lpcard = new CardView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-            cardView.setLayoutParams(lpcard);
-            ll.addView(cardView);
+//            CardView.LayoutParams layoutParams = (CardView.LayoutParams) card.getLayoutParams();
 
-//            TextView tv = new TextView(this);
-//            tv.setText("Exemplo Linha " + Integer.toString(i));
-//            tv.setTextSize(30);
-//
-//            ll.addView(tv);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT
+            );
+            card.setLayoutParams(params);
+
+            card.setContentPadding(30, 30, 40, 30);
+            card.setMaxCardElevation(5);
+            card.setCardElevation(9);
+
+            card.setRadius(15);
+
+            ll.addView(card);
+
+            TextView tv = new TextView(this);
+            tv.setText("Exemplo Linha djjfkdjfd " + Integer.toString(i));
+            tv.setTextSize(30);
+
+            card.addView(tv);
+
+            TextView tv2 = new TextView(this);
+            tv2.setTextSize(15);
+
+            ll.addView(tv2);
 
         }
-
-        setContentView(sv);
-
     }
 }

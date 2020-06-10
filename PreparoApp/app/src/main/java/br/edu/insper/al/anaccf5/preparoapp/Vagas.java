@@ -64,6 +64,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
     String interesses = "";
     String each_one = "";
     String [] each;
+    String [] empresas;
 
     ScrollView sv;
     LinearLayout ll;
@@ -88,18 +89,13 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_perfil);
 
-       
-
         fstore = FirebaseFirestore.getInstance();
         auth = Conexao.getFirebaseAuth();
         user = Conexao.getFirebaseUser();
         userid = auth.getCurrentUser().getUid();
-
         sv = (ScrollView) findViewById(R.id.sv);
         ll = (LinearLayout) findViewById(R.id.ll);
-
         mContext = getApplicationContext();
-     
 
 
 
@@ -120,9 +116,6 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                 for (int i = 0; i < each.length; i++) {
                     each_one += each[i];
                 }
-                tv.setText(each_one);
-                tv.setTextSize(30);
-//                card.addView(tv);
             }
         });
 
@@ -140,7 +133,6 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                 }
             }
         });
-
     }
 
     private void continuacao(final String document) {
@@ -151,8 +143,8 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                 for (Object valores : documentSnapshot.getData().values()){
                     for (String item : each){
                         if (item.equals(valores)){
-                            /** CARD **/
 
+                            /** CARD **/
                             LinearLayout.LayoutParams param_card = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -232,19 +224,16 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             interesse.setBackgroundResource(R.drawable.btn_bg);
                             interesse.setAllCaps(false);
 
-
                             LinearLayout.LayoutParams params_foto = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
                             params_foto.setMargins(0, 0, 0, 10);
-                            params_foto.width = 780;
+                            params_foto.width = 740;
                             params_foto.height = 500;
 
                             final ImageView foto = new ImageView(mContext);
                             foto.setLayoutParams(params_foto);
-
-
 
                             FirebaseStorage storage = FirebaseStorage.getInstance();
                             StorageReference imageRef = storage.getReference()
@@ -259,22 +248,18 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                                         }
                                     });
 
-
                             card.addView(rem);
                             card.addView(tipo);
                             card.addView(interesse);
                             card.addView(foto);
                             card.addView(cargo);
-
-
-
-
                         }
                     }
                 }
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -283,7 +268,6 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
         else {
             super.onBackPressed();
         }
-
     }
 
     @Override

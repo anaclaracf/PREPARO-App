@@ -184,7 +184,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textShortMessage" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -213,7 +214,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textShortMessage" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -242,7 +244,8 @@
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:inputType="textShortMessage" />
                     </LinearLayout>
                 </LinearLayout>
                     <RelativeLayout

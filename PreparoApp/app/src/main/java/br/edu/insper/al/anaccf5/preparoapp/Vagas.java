@@ -255,6 +255,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             card.addView(cargo);
                             break;
                         }
+                        break;
                     }
                 }
             }

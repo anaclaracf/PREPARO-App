@@ -6,18 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,6 +34,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 
@@ -119,24 +126,103 @@ public class Vagas extends AppCompatActivity {
                     for (String item : each){
                         if (item.equals(valores)){
                             /** CARD **/
-                            final CardView card = new CardView(mContext);
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+
+                            LinearLayout.LayoutParams param_card = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                                    LinearLayout.LayoutParams.MATCH_PARENT
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
                             );
-                            card.setLayoutParams(params);
+                            param_card.setMargins(0, 50, 0, 50);
+                            param_card.width = 810;
+                            param_card.height = 1000;
+
+                            final CardView card = new CardView(mContext);
+                            card.setLayoutParams(param_card);
                             card.setContentPadding(30, 30, 40, 30);
                             card.setMaxCardElevation(5);
                             card.setCardElevation(9);
-                            card.setMinimumHeight(30);
                             card.setRadius(15);
                             ll.addView(card);
                             System.out.println(valores);
 
-                            TextView tv2 = new TextView(mContext);
-                            tv2.setTextSize(15);
 
-                            ll.addView(tv2);
+                            LinearLayout.LayoutParams params_rem = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            params_rem.setMargins(0, 730, 0, 0);
+                            params_rem.width = 350;
+                            params_rem.height = 150;
+
+                            Button rem = new Button(mContext);
+                            rem.setTextSize(13);
+                            rem.setText(documentSnapshot.getString("salario"));
+                            rem.setLayoutParams(params_rem);
+                            rem.setBackgroundResource(R.drawable.btn_bg);
+
+                            LinearLayout.LayoutParams params_tipo = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            params_tipo.setMargins(390, 730, 0, 0);
+                            params_tipo.width = 350;
+                            params_tipo.height = 150;
+
+                            Button tipo = new Button(mContext);
+                            tipo.setTextSize(13);
+                            tipo.setText(documentSnapshot.getString("tipo"));
+                            tipo.setLayoutParams(params_tipo);
+                            tipo.setBackgroundResource(R.drawable.btn_bg);
+
+                            LinearLayout.LayoutParams params_interess = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            params_interess.setMargins(5, 560, 0, 10);
+                            params_interess.width = 737;
+                            params_interess.height = 150;
+
+                            Button interesse = new Button(mContext);
+                            interesse.setTextSize(15);
+                            interesse.setText(documentSnapshot.getString("interesse1"));
+                            interesse.setLayoutParams(params_interess);
+                            interesse.setBackgroundResource(R.drawable.btn_bg);
+
+
+                            LinearLayout.LayoutParams params_foto = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            params_foto.setMargins(0, 0, 0, 10);
+                            params_foto.width = 800;
+                            params_foto.height = 500;
+
+                            final ImageView foto = new ImageView(mContext);
+                            foto.setLayoutParams(params_foto);
+
+
+
+                            FirebaseStorage storage = FirebaseStorage.getInstance();
+                            StorageReference imageRef = storage.getReference()
+                                    .child("icone")
+                                    .child(documentSnapshot.getString("foto"));
+                            imageRef.getBytes(1024*1024)
+                                    .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                                        @Override
+                                        public void onSuccess(byte[] bytes) {
+                                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                                            foto.setImageBitmap(bitmap);
+                                        }
+                                    });
+
+
+                            card.addView(rem);
+                            card.addView(tipo);
+                            card.addView(interesse);
+                            card.addView(foto);
+
+
+
+
                         }
                     }
                 }

@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".SobreNos"
-    android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:id="@+id/drawer_layout">
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -34,12 +33,49 @@
                 android:minHeight="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_menu"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="sobre a empresa"
-                android:textSize="30sp"
-                tools:ignore="MissingConstraints" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="364dp"
+                android:layout_height="545dp"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="15dp" >
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="270dp"
+                    android:layout_gravity=""
+                    android:layout_marginTop="7dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:elevation="1dp"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:id="@+id/nomeUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="Preparo"
+                    android:textStyle="bold"
+                    android:textSize="45sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"/>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="125dp"
+                    android:background="@color/colorAccent2"/>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="360dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"/>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 

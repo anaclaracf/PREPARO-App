@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Cadastro.class);
+                Intent intent = new Intent(MainActivity.this, Perfil.class);
                 MainActivity.this.startActivity(intent);
                 MainActivity.this.onPause();
             }

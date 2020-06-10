@@ -45,6 +45,7 @@ public class Vagas extends AppCompatActivity {
     String userid;
     String interesses = "";
     String each_one = "";
+    String [] each;
 
     ScrollView sv;
     LinearLayout ll;
@@ -68,18 +69,6 @@ public class Vagas extends AppCompatActivity {
         mContext = getApplicationContext();
 
 
-        /** CARD **/
-        final CardView card = new CardView(mContext);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
-        );
-        card.setLayoutParams(params);
-        card.setContentPadding(30, 30, 40, 30);
-        card.setMaxCardElevation(5);
-        card.setCardElevation(9);
-        card.setRadius(15);
-        ll.addView(card);
 
         /** PEGAR INTERESSES DA PESSOA **/
         DocumentReference documentReference = fstore.collection("candidatos").document(userid);
@@ -93,14 +82,14 @@ public class Vagas extends AppCompatActivity {
                         }
                     }
                 }
-                String[] each = interesses.split(",");
+                each = interesses.split(",");
                 TextView tv = new TextView(getApplicationContext());
                 for (int i = 0; i < each.length; i++) {
                     each_one += each[i];
                 }
                 tv.setText(each_one);
                 tv.setTextSize(30);
-                card.addView(tv);
+//                card.addView(tv);
             }
         });
 
@@ -119,18 +108,38 @@ public class Vagas extends AppCompatActivity {
             }
         });
 
-        TextView tv2 = new TextView(this);
-        tv2.setTextSize(15);
-
-        ll.addView(tv2);
     }
 
     private void continuacao(final String document) {
-        DocumentReference documentReference2 = fstore.collection(document).document();
+        DocumentReference documentReference2 = fstore.collection("vagas").document(document);
         documentReference2.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                System.out.println(document);
+                for (Object valores : documentSnapshot.getData().values()){
+                    for (String item : each){
+                        if (item.equals(valores)){
+                            /** CARD **/
+                            final CardView card = new CardView(mContext);
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.MATCH_PARENT
+                            );
+                            card.setLayoutParams(params);
+                            card.setContentPadding(30, 30, 40, 30);
+                            card.setMaxCardElevation(5);
+                            card.setCardElevation(9);
+                            card.setMinimumHeight(30);
+                            card.setRadius(15);
+                            ll.addView(card);
+                            System.out.println(valores);
+
+                            TextView tv2 = new TextView(mContext);
+                            tv2.setTextSize(15);
+
+                            ll.addView(tv2);
+                        }
+                    }
+                }
             }
         });
     }

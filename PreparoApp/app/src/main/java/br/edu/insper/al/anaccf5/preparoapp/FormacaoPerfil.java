@@ -45,6 +45,10 @@ public class FormacaoPerfil extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+
+                le_name.setText(documentSnapshot.getString("nome").substring(0,1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
+
+
                 if (documentSnapshot.contains("curso")) {
                     le_curso.setText(documentSnapshot.getString("curso").substring(0, 1).toUpperCase() + documentSnapshot.getString("curso").substring(1));
                 } else {

@@ -139,6 +139,12 @@ public class Perfil extends AppCompatActivity implements NavigationView.OnNaviga
                 Perfil.this.onPause();
                 break;
             case R.id.nav_sair:
+                Intent i = new Intent(Perfil.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
                 break;
             case R.id.nav_sobre:
                 Intent intent1 = new Intent(Perfil.this, SobreNos.class);

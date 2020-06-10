@@ -253,6 +253,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             card.addView(interesse);
                             card.addView(foto);
                             card.addView(cargo);
+                            break;
                         }
                     }
                 }
@@ -281,6 +282,12 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
             case R.id.nav_vagas:
                 break;
             case R.id.nav_sair:
+                Intent i = new Intent(Vagas.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
                 break;
             case R.id.nav_sobre:
                 Intent intent = new Intent(Vagas.this, SobreNos.class);

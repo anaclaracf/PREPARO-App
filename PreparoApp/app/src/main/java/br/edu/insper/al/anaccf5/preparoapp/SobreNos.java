@@ -72,6 +72,13 @@ public class SobreNos extends AppCompatActivity implements NavigationView.OnNavi
                 SobreNos.this.onPause();
                 break;
             case R.id.nav_sair:
+                Intent i = new Intent(SobreNos.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
+                break;
             case R.id.nav_sobre:
                 break;
 

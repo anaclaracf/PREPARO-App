@@ -148,19 +148,17 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp" />
 
-                        <EditText
-                            android:id="@+id/situacao"
+                        <Spinner
+                            android:id="@+id/spinner_situacao"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/btn_bg"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
-                            android:hint="Ex: Cursando, 1˚Semestre"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="15sp"
-                            android:inputType="textShortMessage" />
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -180,13 +178,12 @@
                             android:textSize="15sp" />
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/spinner_nivel"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="3dp"
                             android:background="@drawable/spinner"
                             android:fontFamily="sans-serif"
-                            android:inputType="textPassword"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"

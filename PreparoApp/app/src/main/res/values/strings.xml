@@ -17,6 +17,21 @@
         <item>Seletiva</item>
     </string-array>
 
+    <string-array name="situacao">
+        <item>Nenhum item selecionado</item>
+        <item>Concluído</item>
+        <item>1º Semestre</item>
+        <item>2º Semestre</item>
+        <item>3º Semestre</item>
+        <item>4º Semestre</item>
+        <item>5º Semestre</item>
+        <item>6º Semestre</item>
+        <item>7º Semestre</item>
+        <item>8º Semestre</item>
+        <item>9º Semestre</item>
+        <item>10º Semestre</item>
+    </string-array>
+
     <string-array name="classificacao_formacao">
         <item>Nenhum item selecionado</item>
         <item>Graduação</item>

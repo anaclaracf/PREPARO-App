@@ -40,17 +40,22 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
 
         final EditText instituicao = findViewById(R.id.instituicao);
         final EditText curso = findViewById(R.id.curso);
-        final EditText situacao = findViewById(R.id.situacao);
         Button avancar= findViewById(R.id.seguinte);
         Button voltar= findViewById(R.id.voltar);
         Button preencherDepois = findViewById((R.id.preencherDepois));
         fstore = FirebaseFirestore.getInstance();
 
-        final Spinner spinner = findViewById(R.id.spinner);
+        final Spinner spinner = findViewById(R.id.spinner_nivel);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classificacao_formacao,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        final Spinner situacao = findViewById(R.id.spinner_situacao);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.situacao,android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        situacao.setAdapter(adapter2);
+        situacao.setOnItemSelectedListener(this);
 
         voltar.setOnClickListener(new View.OnClickListener() {
 
@@ -82,8 +87,8 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
             public void onClick(View view) {
                 institution = instituicao.getText().toString().trim();
                 course = curso.getText().toString().trim();
-                situation = situacao.getText().toString().trim();
-                processograd = spinner.getSelectedItem().toString();
+                situation = situacao.getSelectedItem().toString().trim();
+                processograd = spinner.getSelectedItem().toString().trim();
 
                 if (institution.isEmpty() || course.isEmpty() || situation.isEmpty() || processograd.isEmpty()){
                     alert("Preencha todos os campos");

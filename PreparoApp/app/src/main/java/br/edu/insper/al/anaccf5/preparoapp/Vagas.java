@@ -160,6 +160,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             param_card.setMargins(0, 50, 0, 50);
                             param_card.width = 810;
                             param_card.height = 1150;
+                            param_card.gravity = Gravity.CENTER;
 
                             final CardView card = new CardView(mContext);
                             card.setLayoutParams(param_card);
@@ -167,6 +168,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             card.setMaxCardElevation(5);
                             card.setCardElevation(9);
                             card.setRadius(15);
+
                             ll.addView(card);
                             
                             LinearLayout.LayoutParams params_estag = new LinearLayout.LayoutParams(

@@ -1,7 +1,9 @@
 package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,10 +59,30 @@ public class CurriculoPerfil extends AppCompatActivity {
                     le_frase.setVisibility(View.GONE);
 
 
+                    le_botao.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(CurriculoPerfil.this, AddcurriculoPerfil.class);
+                            startActivity(intent);
+                            CurriculoPerfil.this.onPause();
+                        }
+                    });
+
+
                 }
 
             }
 
         });
+    }
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(CurriculoPerfil.this, Perfil.class);
+        startActivity(intent);
+        CurriculoPerfil.this.onPause();
+
     }
 }

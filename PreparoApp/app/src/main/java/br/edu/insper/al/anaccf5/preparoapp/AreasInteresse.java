@@ -42,6 +42,32 @@ public class AreasInteresse extends AppCompatActivity {
         final Map<String, Object> mapuser = new HashMap<>();
 
         avancar = (Button) findViewById(R.id.continuar);
+        Button voltar= findViewById(R.id.voltar);
+        Button preecherDepois=findViewById(R.id.preencherDepois);
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AreasInteresse.this, Olimpiadas.class);
+                startActivity(intent);
+                AreasInteresse.this.onPause();
+
+            }
+        });
+
+        preecherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AreasInteresse.this, Perfil.class);
+                startActivity(intent);
+                AreasInteresse.this.onPause();
+
+            }
+        });
 
         avancar.setOnClickListener(new View.OnClickListener() {
             @Override

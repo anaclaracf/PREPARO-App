@@ -41,6 +41,7 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_habilidades);
         Button avancar = findViewById(R.id.continuar);
         Button voltar= findViewById(R.id.voltar);
+        Button preecherDepois=findViewById(R.id.preencherDepois);
         fstore = FirebaseFirestore.getInstance();
         Button preencherDepois= findViewById(R.id.preencherDepois);
 
@@ -100,7 +101,17 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         });
 
 
+        preecherDepois.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Habilidades.this, Perfil.class);
+                startActivity(intent);
+                Habilidades.this.onPause();
+
+            }
+        });
 
 
         avancar.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +176,7 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
                         System.out.println("Funcionou!");
                     }
                 });
-                Intent intent = new Intent(Habilidades.this, Perfil.class);
+                Intent intent = new Intent(Habilidades.this, Olimpiadas.class);
                 startActivity(intent);
                 Habilidades.this.onPause();
 

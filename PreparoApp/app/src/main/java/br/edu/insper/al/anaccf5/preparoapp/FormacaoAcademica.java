@@ -43,6 +43,7 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
         final EditText situacao = findViewById(R.id.situacao);
         Button avancar= findViewById(R.id.seguinte);
         Button voltar= findViewById(R.id.voltar);
+        Button preencherDepois = findViewById((R.id.preencherDepois));
         fstore = FirebaseFirestore.getInstance();
 
         final Spinner spinner = findViewById(R.id.spinner);
@@ -59,6 +60,18 @@ public class FormacaoAcademica extends AppCompatActivity implements AdapterView.
                 Intent intent = new Intent(FormacaoAcademica.this, Identificacao.class);
                 startActivity(intent);
                 FormacaoAcademica.this.onPause();
+            }
+        });
+
+        preencherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FormacaoAcademica.this, Perfil.class);
+                startActivity(intent);
+                FormacaoAcademica.this.onPause();
+
             }
         });
 

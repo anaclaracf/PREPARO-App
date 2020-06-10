@@ -2,9 +2,12 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +17,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
@@ -22,7 +29,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -38,12 +44,15 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
 import java.io.IOException;
-
 import javax.annotation.Nullable;
+import com.google.android.material.navigation.NavigationView;
 
-public class Vagas extends AppCompatActivity {
+public class Vagas extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     private static final String TAG = "";
     Context context;
@@ -66,6 +75,20 @@ public class Vagas extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vagas);
+      
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_perfil);
+
+       
 
         fstore = FirebaseFirestore.getInstance();
         auth = Conexao.getFirebaseAuth();
@@ -76,6 +99,7 @@ public class Vagas extends AppCompatActivity {
         ll = (LinearLayout) findViewById(R.id.ll);
 
         mContext = getApplicationContext();
+     
 
 
 
@@ -144,8 +168,7 @@ public class Vagas extends AppCompatActivity {
                             card.setCardElevation(9);
                             card.setRadius(15);
                             ll.addView(card);
-                            System.out.println(valores);
-
+                            
                             LinearLayout.LayoutParams params_estag = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -160,9 +183,6 @@ public class Vagas extends AppCompatActivity {
                             cargo.setLayoutParams(params_estag);
                             cargo.setTextColor(getResources().getColor(R.color.colorPrimary));
                             cargo.setTypeface(null, Typeface.BOLD);
-
-
-
 
 
                             LinearLayout.LayoutParams params_rem = new LinearLayout.LayoutParams(
@@ -253,5 +273,37 @@ public class Vagas extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_perfil:
+                Intent intent1 = new Intent(Vagas.this, Perfil.class);
+                startActivity(intent1);
+                Vagas.this.onPause();
+                break;
+            case R.id.nav_vagas:
+                break;
+            case R.id.nav_sair:
+                break;
+            case R.id.nav_sobre:
+                Intent intent = new Intent(Vagas.this, SobreNos.class);
+                startActivity(intent);
+                Vagas.this.onPause();
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

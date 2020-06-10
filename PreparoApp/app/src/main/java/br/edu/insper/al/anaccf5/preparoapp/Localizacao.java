@@ -44,6 +44,7 @@ public class Localizacao extends AppCompatActivity {
         final EditText complementoUser = findViewById(R.id.complemento);
         Button avancar= findViewById(R.id.continuar);
         Button voltar= findViewById(R.id.voltar);
+        Button preencherDepois=findViewById(R.id.preencherDepois);
         fstore = FirebaseFirestore.getInstance();
         FirebaseAuth auth = Conexao.getFirebaseAuth();
         user = Conexao.getFirebaseUser();
@@ -56,6 +57,18 @@ public class Localizacao extends AppCompatActivity {
                 Intent intent = new Intent(Localizacao.this, FormacaoAcademica.class);
                 startActivity(intent);
                 Localizacao.this.onPause();
+            }
+        });
+
+        preencherDepois.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Localizacao.this, Perfil.class);
+                startActivity(intent);
+                Localizacao.this.onPause();
+
             }
         });
 

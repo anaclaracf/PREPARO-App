@@ -37,7 +37,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Curriculo extends AppCompatActivity {
+public class AddcurriculoPerfil extends AppCompatActivity {
 
 
     private Button btnSelect, btnupload;
@@ -62,7 +62,7 @@ public class Curriculo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_curriculo);
+        setContentView(R.layout.activity_addcurriculo_perfil);
 
         btnSelect = findViewById(R.id.botao_curriculo);
 
@@ -74,9 +74,8 @@ public class Curriculo extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance();
 
-        Button avancar= findViewById(R.id.continuar);
-        Button voltar = findViewById(R.id.voltar);
-        Button preecherDepois=findViewById(R.id.preencherDepois);
+
+        Button concluido=findViewById(R.id.preencherDepois);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -90,14 +89,14 @@ public class Curriculo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (ContextCompat.checkSelfPermission(Curriculo.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                if (ContextCompat.checkSelfPermission(AddcurriculoPerfil.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED) {
 
                     selectPDF();
 
                 } else {
 
-                    ActivityCompat.requestPermissions(Curriculo.this, new String[]
+                    ActivityCompat.requestPermissions(AddcurriculoPerfil.this, new String[]
                             {Manifest.permission.READ_EXTERNAL_STORAGE}, 5699);
 
                 }
@@ -115,7 +114,7 @@ public class Curriculo extends AppCompatActivity {
 
                 } else {
 
-                    Toast.makeText(Curriculo.this, "Please select a file!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddcurriculoPerfil.this, "Please select a file!", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -123,39 +122,20 @@ public class Curriculo extends AppCompatActivity {
         });
 
 
-        voltar.setOnClickListener(new View.OnClickListener() {
+
+
+        concluido.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Curriculo.this, Localizacao.class);
+                Intent intent = new Intent(AddcurriculoPerfil.this, CurriculoPerfil.class);
                 startActivity(intent);
-                Curriculo.this.onPause();
-            }
-        });
-
-        preecherDepois.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Curriculo.this, Perfil.class);
-                startActivity(intent);
-                Curriculo.this.onPause();
+                AddcurriculoPerfil.this.finish();
 
             }
         });
 
-        avancar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Curriculo.this, Habilidades.class);
-                startActivity(intent);
-                Curriculo.this.onPause();
-            }
-        });
 
     }
 
@@ -188,7 +168,7 @@ public class Curriculo extends AppCompatActivity {
 
     private void uploadPDF(Uri pdfUri) {
 
-        progressDialog = new ProgressDialog(Curriculo.this);
+        progressDialog = new ProgressDialog(AddcurriculoPerfil.this);
 
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
@@ -239,7 +219,7 @@ public class Curriculo extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(Curriculo.this, "ERROR! Something went wrong try again.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddcurriculoPerfil.this, "ERROR! Something went wrong try again.", Toast.LENGTH_SHORT).show();
 
                 progressDialog.dismiss();
 
@@ -275,3 +255,4 @@ public class Curriculo extends AppCompatActivity {
 
     }
 }
+

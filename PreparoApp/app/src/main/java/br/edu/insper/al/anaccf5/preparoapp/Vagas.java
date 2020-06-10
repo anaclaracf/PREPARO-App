@@ -9,9 +9,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
@@ -133,23 +135,41 @@ public class Vagas extends AppCompatActivity {
                             );
                             param_card.setMargins(0, 50, 0, 50);
                             param_card.width = 810;
-                            param_card.height = 1000;
+                            param_card.height = 1150;
 
                             final CardView card = new CardView(mContext);
                             card.setLayoutParams(param_card);
-                            card.setContentPadding(30, 30, 40, 30);
+                            card.setContentPadding(30, 30, 30, 30);
                             card.setMaxCardElevation(5);
                             card.setCardElevation(9);
                             card.setRadius(15);
                             ll.addView(card);
                             System.out.println(valores);
 
+                            LinearLayout.LayoutParams params_estag = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            params_estag.setMargins(115, 590, 0, 0);
+                            params_estag.width = 600;
+                            params_estag.height = 200;
+
+                            TextView cargo = new TextView(mContext);
+                            cargo.setTextSize(23);
+                            cargo.setText(documentSnapshot.getString("cargo"));
+                            cargo.setLayoutParams(params_estag);
+                            cargo.setTextColor(getResources().getColor(R.color.colorPrimary));
+                            cargo.setTypeface(null, Typeface.BOLD);
+
+
+
+
 
                             LinearLayout.LayoutParams params_rem = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
-                            params_rem.setMargins(0, 730, 0, 0);
+                            params_rem.setMargins(0, 930, 0, 0);
                             params_rem.width = 350;
                             params_rem.height = 150;
 
@@ -158,12 +178,13 @@ public class Vagas extends AppCompatActivity {
                             rem.setText(documentSnapshot.getString("salario"));
                             rem.setLayoutParams(params_rem);
                             rem.setBackgroundResource(R.drawable.btn_bg);
+                            rem.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_tipo = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
-                            params_tipo.setMargins(390, 730, 0, 0);
+                            params_tipo.setMargins(390, 930, 0, 0);
                             params_tipo.width = 350;
                             params_tipo.height = 150;
 
@@ -172,12 +193,13 @@ public class Vagas extends AppCompatActivity {
                             tipo.setText(documentSnapshot.getString("tipo"));
                             tipo.setLayoutParams(params_tipo);
                             tipo.setBackgroundResource(R.drawable.btn_bg);
+                            tipo.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_interess = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
-                            params_interess.setMargins(5, 560, 0, 10);
+                            params_interess.setMargins(5, 760, 0, 10);
                             params_interess.width = 737;
                             params_interess.height = 150;
 
@@ -186,6 +208,7 @@ public class Vagas extends AppCompatActivity {
                             interesse.setText(documentSnapshot.getString("interesse1"));
                             interesse.setLayoutParams(params_interess);
                             interesse.setBackgroundResource(R.drawable.btn_bg);
+                            interesse.setAllCaps(false);
 
 
                             LinearLayout.LayoutParams params_foto = new LinearLayout.LayoutParams(
@@ -193,7 +216,7 @@ public class Vagas extends AppCompatActivity {
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
                             params_foto.setMargins(0, 0, 0, 10);
-                            params_foto.width = 800;
+                            params_foto.width = 780;
                             params_foto.height = 500;
 
                             final ImageView foto = new ImageView(mContext);
@@ -219,6 +242,7 @@ public class Vagas extends AppCompatActivity {
                             card.addView(tipo);
                             card.addView(interesse);
                             card.addView(foto);
+                            card.addView(cargo);
 
 
 

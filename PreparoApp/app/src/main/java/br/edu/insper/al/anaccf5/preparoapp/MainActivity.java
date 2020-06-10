@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.hardware.Camera;
 import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.os.Handler;

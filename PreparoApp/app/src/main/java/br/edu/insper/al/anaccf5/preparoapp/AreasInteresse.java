@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
@@ -28,6 +29,19 @@ public class AreasInteresse extends AppCompatActivity {
     private FirebaseFirestore fstore;
     private FirebaseAuth auth;
     String userid;
+    int check1= 1;
+    int check2= 1;
+    int check3= 1;
+    int check4= 1;
+    int check5= 1;
+    int check6= 1;
+    int check7= 1;
+    int check8= 1;
+    int check9= 1;
+    int check10= 1;
+    int check11= 1;
+    int check12= 1;
+
 
     Button avancar;
 
@@ -105,75 +119,182 @@ public class AreasInteresse extends AppCompatActivity {
         final ImageButton imagem11= findViewById(R.id.imagem11);
         final ImageButton imagem12= findViewById(R.id.imagem12);
 
+
+
+
+
+
+
         imagem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem1.setAlpha(0.9f);
-                mapuser.put("interesses0", educacao.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check1==1){
+
+                    imagem1.setAlpha(0.9f);
+                    mapuser.put("interesse0", educacao.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check1=0;
+
+                }else{
+
+                    mapuser.put("interesse0", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check1=1;
+                    imagem1.setAlpha(0.6f);
+
+
+                }
+
             }
         });
+
 
         imagem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem2.setAlpha(0.9f);
-                mapuser.put("interesses1", filosofia.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check2==1){
+
+                    imagem2.setAlpha(0.9f);
+                    mapuser.put("interesse1", filosofia.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check2=0;
+
+                }else{
+
+                    mapuser.put("interesse1", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check2=1;
+                    imagem2.setAlpha(0.6f);
+
+
+                }
 
             }
         });
-
         imagem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem3.setAlpha(0.9f);
-                mapuser.put("interesses2", arquitetura.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check3==1){
+
+                    imagem3.setAlpha(0.9f);
+                    mapuser.put("interesse2", arquitetura.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check3=0;
+
+                }else{
+
+                    mapuser.put("interesse2", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check3=1;
+                    imagem3.setAlpha(0.6f);
+
+
+                }
+
             }
         });
 
         imagem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem4.setAlpha(0.9f);
-                mapuser.put("interesses3", artes.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check4==1){
+
+                    imagem4.setAlpha(0.9f);
+                    mapuser.put("interesse3", artes.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check4=0;
+
+                }else{
+
+                    mapuser.put("interesse3", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check4=1;
+                    imagem4.setAlpha(0.6f);
+
+
+                }
 
             }
         });
-
         imagem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem5.setAlpha(0.9f);
-                mapuser.put("interesses4", negocios.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check5==1){
+
+                    imagem5.setAlpha(0.9f);
+                    mapuser.put("interesse4", negocios.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check5=0;
+
+                }else{
+
+                    mapuser.put("interesse4", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check5=1;
+                    imagem5.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -181,14 +302,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem6.setAlpha(0.9f);
-                mapuser.put("interesses5", ciencias.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check6==1){
+
+                    imagem6.setAlpha(0.9f);
+                    mapuser.put("interesse5", ciencias.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check6=0;
+
+                }else{
+
+                    mapuser.put("interesse5", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check6=1;
+                    imagem6.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -196,14 +337,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem7.setAlpha(0.9f);
-                mapuser.put("interesses6", direito.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check7==1){
+
+                    imagem7.setAlpha(0.9f);
+                    mapuser.put("interesse6", direito.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check7=0;
+
+                }else{
+
+                    mapuser.put("interesse6", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check7=1;
+                    imagem7.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -211,14 +372,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem8.setAlpha(0.9f);
-                mapuser.put("interesses7", financas.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check8==1){
+
+                    imagem8.setAlpha(0.9f);
+                    mapuser.put("interesse7", financas.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check8=0;
+
+                }else{
+
+                    mapuser.put("interesse7", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check8=1;
+                    imagem8.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -226,14 +407,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem9.setAlpha(0.9f);
-                mapuser.put("interesses8", informatica.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check9==1){
+
+                    imagem9.setAlpha(0.9f);
+                    mapuser.put("interesse8", informatica.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check9=0;
+
+                }else{
+
+                    mapuser.put("interesse8", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check9=1;
+                    imagem9.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -241,14 +442,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem10.setAlpha(0.9f);
-                mapuser.put("interesses9", marketing.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check10==1){
+
+                    imagem10.setAlpha(0.9f);
+                    mapuser.put("interesse9", marketing.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check10=0;
+
+                }else{
+
+                    mapuser.put("interesse9", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check10=1;
+                    imagem10.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -256,14 +477,34 @@ public class AreasInteresse extends AppCompatActivity {
         imagem11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem11.setAlpha(0.9f);
-                mapuser.put("interesses10", psicologia.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check11==1){
+
+                    imagem11.setAlpha(0.9f);
+                    mapuser.put("interesse10", psicologia.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check11=0;
+
+                }else{
+
+                    mapuser.put("interesse10", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check11=1;
+                    imagem11.setAlpha(0.6f);
+
+
+                }
 
             }
         });
@@ -271,17 +512,38 @@ public class AreasInteresse extends AppCompatActivity {
         imagem12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imagem12.setAlpha(0.9f);
-                mapuser.put("interesses11", saude.getText());
-                documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("Funcionou!");
-                    }
-                });
+
+                if(check12==1){
+
+                    imagem12.setAlpha(0.9f);
+                    mapuser.put("interesse11", saude.getText());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+                    check12=0;
+
+                }else{
+
+                    mapuser.put("interesse11", FieldValue.delete());
+                    documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            System.out.println("Funcionou!");
+                        }
+                    });
+
+                    check12=1;
+                    imagem12.setAlpha(0.6f);
+
+
+                }
 
             }
         });
+
 
 
 

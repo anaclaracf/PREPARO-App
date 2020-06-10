@@ -25,7 +25,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="?selectableItemBackgroundBorderless"
                 android:elevation="1dp"
-                android:src="@drawable/paul"/>
+                android:src="@drawable/ic_foto_perfil"/>
 
             <TextView
                 android:id="@+id/nomeUser"

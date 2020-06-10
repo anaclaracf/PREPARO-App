@@ -27,7 +27,7 @@
                 android:background="?selectableItemBackgroundBorderless"
                 android:elevation="1dp"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/paul"/>
+                android:src="@drawable/ic_foto_perfil"/>
 
             <TextView
                 android:id="@+id/nomeUser"

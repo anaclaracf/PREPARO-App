@@ -105,10 +105,11 @@ public class Perfil extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
 
+        /** MUDAR AQUI DEPOIS **/
         Int.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Perfil.this, AreasInteressePerfil.class);
+                Intent intent = new Intent(Perfil.this, Vagas.class);
                 Perfil.this.startActivity(intent);
                 Perfil.this.onPause();
             }

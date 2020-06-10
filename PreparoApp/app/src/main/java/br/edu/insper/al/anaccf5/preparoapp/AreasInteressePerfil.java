@@ -59,7 +59,6 @@ public class AreasInteressePerfil extends AppCompatActivity {
 
 
                 le_name.setText(documentSnapshot.getString("nome").substring(0, 1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
-                System.out.println(estudos);
                 os_interesses.setText(estudos.substring(0, estudos.length() - 1));
 
             }

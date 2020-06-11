@@ -13,5 +13,8 @@
     <style name="spinner_style">
         <item name="android:background">@color/transparent</item>
     </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 
 </resources>

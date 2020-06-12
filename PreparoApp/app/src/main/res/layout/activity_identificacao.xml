@@ -155,7 +155,9 @@
                             android:paddingRight="15dp"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp"
-                            android:inputType="date" />
+                            android:clickable="true"
+                            android:inputType="date"
+                            android:focusable="false"/>
                     </LinearLayout>
 
                     <LinearLayout

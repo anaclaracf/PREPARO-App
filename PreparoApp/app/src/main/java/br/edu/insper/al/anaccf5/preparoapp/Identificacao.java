@@ -2,10 +2,12 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +35,10 @@ public class Identificacao extends AppCompatActivity {
     String estadoCivil;
     String genero;
 
+    int year;
+    int month;
+    int day;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +53,30 @@ public class Identificacao extends AppCompatActivity {
         Button preecherDepois=findViewById(R.id.preencherDepois);
 
         fstore = FirebaseFirestore.getInstance();
+
+        final Calendar myCalendar = Calendar.getInstance();
+        final EditText edittext= (EditText) findViewById(R.id.data_nascimento);
+
+        year = myCalendar.get(Calendar.YEAR);
+        month = myCalendar.get(Calendar.MONTH);
+        day = myCalendar.get(Calendar.DAY_OF_MONTH);
+
+        edittext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(Identificacao.this, R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                        myCalendar.set(Calendar.YEAR, year);
+                        myCalendar.set(Calendar.MONTH, monthOfYear);
+                        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                        String myFormat = "dd/MM/yy";
+                        SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
+                        edittext.setText(sdf.format(myCalendar.getTime()));
+                    }
+                }, year, month, day).show();
+            }
+        });
 
         voltar.setOnClickListener(new View.OnClickListener() {
 

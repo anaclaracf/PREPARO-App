@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     private FirebaseAuth auth;
+    TextView incorretos;
+    TextView insuficientes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Button log_in = findViewById(R.id.login);
         final EditText email_usuario = findViewById(R.id.email_login);
         final EditText senha_usuario = findViewById(R.id.senha_login);
+        insuficientes = findViewById(R.id.dados_insuficientes);
+        incorretos = findViewById(R.id.dados_incorretos);
 
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                 String email = email_usuario.getText().toString().trim();
                 String senha = senha_usuario.getText().toString().trim();
                 if (email.isEmpty() || senha.isEmpty()){
-                    alert("Dados insuficientes");
+                    //alert("Dados insuficientes");
+                    incorretos.setVisibility(View.INVISIBLE);
+                    insuficientes.setVisibility(View.VISIBLE);
                 } else {
                     login(email, senha);
                 }
@@ -85,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, Perfil.class);
                             startActivity(intent);
                         }else {
-                            alert("Dados incorretos");
+                            //alert("Dados incorretos");
+                            insuficientes.setVisibility(View.INVISIBLE);
+                            incorretos.setVisibility(View.VISIBLE);
                         }
                     }
                 });

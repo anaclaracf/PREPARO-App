@@ -2,7 +2,10 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +37,8 @@ public class AreasInteressePerfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_areas_interesses_perfil);
 
+        Button mais_interesses = findViewById(R.id.mais_interesses);
+
         os_interesses = (TextView) findViewById(R.id.interesse);
         le_name = (TextView) findViewById(R.id.nomeUser);
 
@@ -61,6 +66,17 @@ public class AreasInteressePerfil extends AppCompatActivity {
                 le_name.setText(documentSnapshot.getString("nome").substring(0, 1).toUpperCase() + documentSnapshot.getString("nome").substring(1));
                 os_interesses.setText(estudos.substring(0, estudos.length() - 1));
 
+            }
+        });
+
+        mais_interesses.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AreasInteressePerfil.this,AreasInteresse.class);
+                startActivity(intent);
+                AreasInteressePerfil.this.onPause();
             }
         });
 

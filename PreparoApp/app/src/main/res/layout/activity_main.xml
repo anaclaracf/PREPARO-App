@@ -26,8 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgView_logo"
-            android:id="@+id/rellay1"
-            android:visibility="gone">
+            android:id="@+id/rellay1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,13 +36,38 @@
                 android:fontFamily="sans-serif"
                 android:layout_marginTop="20dp"
                 android:id="@+id/tv_login"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DADOS INCORRETOS"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/dados_incorretos"
+                android:textSize="15sp"
+                android:visibility="gone"
+                android:textColor="@color/colorAccent1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DADOS INSUFICIENTES"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="70dp"
+                android:visibility="gone"
+                android:id="@+id/dados_insuficientes"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_login"
                 android:orientation="vertical"
                 android:id="@+id/linlay1"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="45dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

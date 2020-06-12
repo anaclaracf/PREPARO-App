@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Perfil"
+    tools:context=".AddcurriculoPerfil"
     android:id="@+id/drawer_layout">
 
     <com.google.android.material.navigation.NavigationView
@@ -37,10 +37,11 @@
                 app:theme="@style/ToolbarColoredBackArrow"/>
 
             <androidx.cardview.widget.CardView
-            android:layout_width="364dp"
-            android:layout_height="600dp"
-            android:layout_gravity="center_horizontal"
-            app:cardCornerRadius="15dp" >
+                android:layout_width="364dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="600dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="15dp" >
 
             <TextView
                 android:id="@+id/textView"

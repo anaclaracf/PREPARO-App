@@ -37,6 +37,42 @@
                 android:fontFamily="sans-serif"
                 android:layout_marginTop="20dp"
                 android:id="@+id/tv_login"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ERRO DE CADASTRO"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/dados_incorretos"
+                android:textSize="15sp"
+                android:visibility="gone"
+                android:textColor="@color/colorAccent1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DADOS INSUFICIENTES"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="60dp"
+                android:visibility="gone"
+                android:id="@+id/dados_insuficientes"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SENHAS DIFERENTES"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/dados_senhas"
+                android:textSize="15sp"
+                android:visibility="gone"
+                android:textColor="@color/colorAccent1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

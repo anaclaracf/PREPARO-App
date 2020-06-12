@@ -29,6 +29,9 @@ public class Cadastro extends AppCompatActivity {
     private FirebaseFirestore fstore;
     String userID;
     String email_usuario;
+    TextView incorretos;
+    TextView insuficientes;
+    TextView senhas;
 
 
     @Override
@@ -39,6 +42,10 @@ public class Cadastro extends AppCompatActivity {
         final EditText senha = findViewById(R.id.senha);
         final EditText confirmation = findViewById(R.id.confirmation_senha);
         Button cadastrar = findViewById(R.id.button_cadastro);
+        insuficientes = findViewById(R.id.dados_insuficientes);
+        incorretos = findViewById(R.id.dados_incorretos);
+        senhas = findViewById(R.id.dados_senhas);
+
         fstore = FirebaseFirestore.getInstance();
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +56,18 @@ public class Cadastro extends AppCompatActivity {
                 String confirmation_senha = confirmation.getText().toString().trim();
                 if (confirmation_senha.equals(senha_usuario)){
                     if  (email_usuario.isEmpty() || senha_usuario.isEmpty()){
-                        alert("Dados insuficientes");
+                        //alert("Dados insuficientes");
+                        senhas.setVisibility(View.INVISIBLE);
+                        incorretos.setVisibility(View.INVISIBLE);
+                        insuficientes.setVisibility(View.VISIBLE);
                     } else {
                         criarUser(email_usuario, senha_usuario);
                     }
                 } else {
-                    alert("As senhas divergem");
+                    //alert("As senhas divergem");
+                    senhas.setVisibility(View.VISIBLE);
+                    incorretos.setVisibility(View.INVISIBLE);
+                    insuficientes.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -83,7 +96,10 @@ public class Cadastro extends AppCompatActivity {
                             startActivity(intent);
                             Cadastro.this.onPause();
                         } else {
-                            alert("Erro de cadastro");
+                            //alert("Erro de cadastro");
+                            senhas.setVisibility(View.INVISIBLE);
+                            incorretos.setVisibility(View.VISIBLE);
+                            insuficientes.setVisibility(View.INVISIBLE);
                         }
                     }
                 });

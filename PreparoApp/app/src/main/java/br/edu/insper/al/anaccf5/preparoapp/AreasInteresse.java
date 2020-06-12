@@ -13,13 +13,18 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class AreasInteresse extends AppCompatActivity {
 
@@ -119,11 +124,50 @@ public class AreasInteresse extends AppCompatActivity {
         final ImageButton imagem11= findViewById(R.id.imagem11);
         final ImageButton imagem12= findViewById(R.id.imagem12);
 
-
-
-
-
-
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                for (String interes: documentSnapshot.getData().keySet()){
+                    if (interes.equals("interesse0")){
+                        check1 = 0;
+                        imagem1.setAlpha(0.9f);
+                    } else if (interes.equals("interesse1")){
+                        check2 = 0;
+                        imagem2.setAlpha(0.9f);
+                    } if (interes.equals("interesse2")){
+                        check3 = 0;
+                        imagem3.setAlpha(0.9f);
+                    } if (interes.equals("interesse3")){
+                        check4 = 0;
+                        imagem4.setAlpha(0.9f);
+                    } if (interes.equals("interesse4")){
+                        check5 = 0;
+                        imagem5.setAlpha(0.9f);
+                    } if (interes.equals("interesse5")){
+                        check6 = 0;
+                        imagem6.setAlpha(0.9f);
+                    } if (interes.equals("interesse6")){
+                        check7 = 0;
+                        imagem7.setAlpha(0.9f);
+                    } if (interes.equals("interesse7")){
+                        check8 = 0;
+                        imagem8.setAlpha(0.9f);
+                    } if (interes.equals("interesse8")){
+                        check9 = 0;
+                        imagem9.setAlpha(0.9f);
+                    } if (interes.equals("interesse9")){
+                        check10 = 0;
+                        imagem10.setAlpha(0.9f);
+                    } if (interes.equals("interesse10")){
+                        check11 = 0;
+                        imagem11.setAlpha(0.9f);
+                    } if (interes.equals("interesse11")) {
+                        check12 = 0;
+                        imagem12.setAlpha(0.9f);
+                    }
+                }
+            }
+        });
 
         imagem1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +185,7 @@ public class AreasInteresse extends AppCompatActivity {
                     });
                     check1=0;
 
-                }else{
+                } else{
 
                     mapuser.put("interesse0", FieldValue.delete());
                     documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {

@@ -99,7 +99,7 @@ public class AreasInteressePerfil extends AppCompatActivity implements Navigatio
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(AreasInteressePerfil.this,AreasInteresse.class);
+                Intent intent = new Intent(AreasInteressePerfil.this, AreasInteresse.class);
                 startActivity(intent);
                 AreasInteressePerfil.this.onPause();
             }

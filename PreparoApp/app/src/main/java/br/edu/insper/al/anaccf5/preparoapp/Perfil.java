@@ -105,7 +105,6 @@ public class Perfil extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
 
-        /** MUDAR AQUI DEPOIS **/
         Int.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

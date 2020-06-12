@@ -18,8 +18,10 @@
     </string-array>
 
     <string-array name="situacao">
-        <item>Nenhum item selecionado</item>
+        <item>Selecione a situação do seu curso</item>
         <item>Concluído</item>
+        <item>Trancado</item>
+        <item>Jubilado</item>
         <item>1º Semestre</item>
         <item>2º Semestre</item>
         <item>3º Semestre</item>

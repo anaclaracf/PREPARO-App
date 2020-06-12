@@ -29,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/toolbar"
-                android:background="@color/branco"
+                android:background="@color/transparent"
+                app:theme="@style/ToolbarColoredBackArrow"
                 android:minHeight="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_menu"/>
 

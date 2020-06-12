@@ -2,9 +2,13 @@ package br.edu.insper.al.anaccf5.preparoapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import android.Manifest;
@@ -13,6 +17,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -23,6 +28,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +43,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddcurriculoPerfil extends AppCompatActivity {
+public class AddcurriculoPerfil extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private Button btnSelect, btnupload;
@@ -54,6 +60,10 @@ public class AddcurriculoPerfil extends AppCompatActivity {
 
     DocumentReference documentReference;
     Map<String, Object> mapuser;
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     private Uri pdfUri;
 
@@ -82,6 +92,18 @@ public class AddcurriculoPerfil extends AppCompatActivity {
 
 
         mapuser = new HashMap<>();
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_perfil);
 
 
 
@@ -253,6 +275,46 @@ public class AddcurriculoPerfil extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_perfil:
+                break;
+            case R.id.nav_vagas:
+                Intent intent = new Intent(AddcurriculoPerfil.this, Vagas.class);
+                startActivity(intent);
+                AddcurriculoPerfil.this.onPause();
+                break;
+            case R.id.nav_sair:
+                Intent i = new Intent(AddcurriculoPerfil.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
+                break;
+            case R.id.nav_sobre:
+                Intent intent1 = new Intent(AddcurriculoPerfil.this, SobreNos.class);
+                startActivity(intent1);
+                AddcurriculoPerfil.this.onPause();
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
 

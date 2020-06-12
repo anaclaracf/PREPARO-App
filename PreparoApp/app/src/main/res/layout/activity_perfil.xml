@@ -34,7 +34,8 @@
                 android:id="@+id/toolbar"
                 android:background="@color/transparent"
                 android:minHeight="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_menu"/>
+                app:navigationIcon="@drawable/ic_menu"
+                app:theme="@style/ToolbarColoredBackArrow"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="364dp"

@@ -1,11 +1,18 @@
 package br.edu.insper.al.anaccf5.preparoapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -15,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import javax.annotation.Nullable;
 
-public class HabilidadesPerfil extends AppCompatActivity {
+public class HabilidadesPerfil extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView le_situacaoHab1, le_situacaoHab2, le_situacaoHab3, le_situacaoHab4, le_situacaoHab5, le_situacaoHab6,
             le_situacaoHab7, le_name;
@@ -24,6 +31,10 @@ public class HabilidadesPerfil extends AppCompatActivity {
     private FirebaseAuth auth;
 
     String userid;
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,19 @@ public class HabilidadesPerfil extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
 
         userid = auth.getCurrentUser().getUid();
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_perfil);
+
 
         DocumentReference documentReference = fstore.collection("candidatos").document(userid);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -79,4 +103,43 @@ public class HabilidadesPerfil extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_perfil:
+                break;
+            case R.id.nav_vagas:
+                Intent intent = new Intent(HabilidadesPerfil.this, Vagas.class);
+                startActivity(intent);
+                HabilidadesPerfil.this.onPause();
+                break;
+            case R.id.nav_sair:
+                Intent i = new Intent(HabilidadesPerfil.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
+                break;
+            case R.id.nav_sobre:
+                Intent intent1 = new Intent(HabilidadesPerfil.this, SobreNos.class);
+                startActivity(intent1);
+                HabilidadesPerfil.this.onPause();
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

@@ -90,16 +90,13 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <GridLayout
-                    android:id="@+id/mainGrid"
+                <LinearLayout
+                    android:id="@+id/ll"
                     android:layout_width="match_parent"
                     android:layout_height="1600dp"
-                    android:layout_marginTop="220dp"
-                    android:layout_weight="0"
-                    android:columnCount="1"
-                    android:columnOrderPreserved="false"
-                    android:padding="15dp"
-                    android:rowCount="14">
+                    android:layout_marginTop="255dp"
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
 <!--                    <TextView-->
 <!--                        android:id="@+id/Habilidade1"-->
@@ -318,7 +315,7 @@
 <!--                        android:textColor="@color/colorPrimary"-->
 <!--                        android:textSize="13dp" />-->
 
-                </GridLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 

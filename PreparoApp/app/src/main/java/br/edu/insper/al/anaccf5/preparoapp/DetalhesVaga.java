@@ -17,10 +17,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
@@ -34,6 +36,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Nullable;
 
 public class DetalhesVaga extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +47,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    String numeroid;
 
     private FirebaseFirestore fstore;
     private FirebaseUser user;
@@ -71,14 +77,16 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
         navigationView.setCheckedItem(R.id.nav_perfil);
 
         fstore = FirebaseFirestore.getInstance();
-        auth = Conexao.getFirebaseAuth();
+        auth = FirebaseAuth.getInstance();
+
+        numeroid = auth.getCurrentUser().getUid();
 
         sv = (ScrollView) findViewById(R.id.sv);
         ll = (LinearLayout) findViewById(R.id.ll);
 
         mContext = getApplicationContext();
 
-        String a_vaga = getIntent().getStringExtra("vaga");
+        final String a_vaga = getIntent().getStringExtra("vaga");
         System.out.println(a_vaga);
 
         DocumentReference documentReference = fstore.collection("vagas").document(a_vaga);
@@ -129,11 +137,12 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         });
 
                 LinearLayout.LayoutParams params_estag = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_estag.setMargins(270, 615, 0, 0);
+                params_estag.setMargins(0, 615, 0, 0);
 //                params_estag.gravity
+//                params_estag.gravity = Gravity.CENTER_HORIZONTAL;
 
                 TextView cargo = new TextView(mContext);
                 cargo.setTextSize(25);
@@ -142,6 +151,24 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                 cargo.setTextColor(getResources().getColor(R.color.colorPrimary));
                 cargo.setTypeface(null, Typeface.BOLD);
                 cargo.setGravity(Gravity.CENTER_HORIZONTAL);
+
+                LinearLayout.LayoutParams params_botao = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                params_botao.setMargins(183, 730, 0, 0);
+                params_botao.width = 380;
+
+
+                Button inscrever = new Button(mContext);
+                inscrever.setTextSize(20);
+                inscrever.setText("Inscreva-se");
+                inscrever.setLayoutParams(params_botao);
+                inscrever.setTextColor(getResources().getColor(R.color.colorPrimary));
+                inscrever.setBackgroundResource(R.drawable.btn_bg);
+                inscrever.setGravity(Gravity.CENTER_HORIZONTAL);
+                inscrever.setAllCaps(false);
+
 
 
 
@@ -153,7 +180,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_tipo_titulo.setMargins(0, 800, 0, 0);
+                params_tipo_titulo.setMargins(0, 880, 0, 0);
 
 
                 TextView tipo_titulo = new TextView(mContext);
@@ -167,7 +194,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_tipo.setMargins(0, 880, 0, 0);
+                params_tipo.setMargins(0, 960, 0, 0);
 
 
                 TextView tipo = new TextView(mContext);
@@ -186,7 +213,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_salario_titulo.setMargins(0, 1010, 0, 0);
+                params_salario_titulo.setMargins(0, 1090, 0, 0);
 
 
                 TextView salario_titulo = new TextView(mContext);
@@ -200,7 +227,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_salario.setMargins(0, 1090, 0, 0);
+                params_salario.setMargins(0, 1180, 0, 0);
 
 
                 TextView salario = new TextView(mContext);
@@ -220,7 +247,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_descricao_titulo.setMargins(0, 1220, 0, 0);
+                params_descricao_titulo.setMargins(0, 1300, 0, 0);
 
 
                 TextView descricao_titulo = new TextView(mContext);
@@ -234,7 +261,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
-                params_descricao.setMargins(0, 1300, 0, 0);
+                params_descricao.setMargins(0, 1380, 0, 0);
 
 
                 TextView descricao = new TextView(mContext);
@@ -251,6 +278,7 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
 
                 card.addView(foto);
                 card.addView(cargo);
+                card.addView(inscrever);
                 card.addView(tipo_titulo);
                 card.addView(tipo);
                 card.addView(salario_titulo);
@@ -259,66 +287,30 @@ public class DetalhesVaga extends AppCompatActivity implements NavigationView.On
                 card.addView(descricao);
 
 
+                inscrever.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+//                        numeroid = user.getUid();
+                        DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
+                        Map<String, Object> mapuser = new HashMap<>();
+                        mapuser.put(a_vaga, "inscrito");
+                        documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                System.out.println("Funcionou!");
+                                Toast.makeText(DetalhesVaga.this,"Inscrição Realizada",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+
             }
         });
 
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-//        String a_vaga = getIntent().getStringExtra("vaga");
-//        System.out.println(a_vaga);
-//
-//        DocumentReference documentReference = fstore.collection("vagas").document(a_vaga);
-//        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-//
-//                LinearLayout.LayoutParams param_card = new LinearLayout.LayoutParams(
-//                        LinearLayout.LayoutParams.WRAP_CONTENT,
-//                        LinearLayout.LayoutParams.WRAP_CONTENT
-//                );
-//                param_card.setMargins(0, 50, 0, 50);
-//                param_card.width = 810;
-//                param_card.height = 1150;
-//                param_card.gravity = Gravity.CENTER;
-//
-//                final CardView card = new CardView(mContext);
-//                card.setLayoutParams(param_card);
-//                card.setContentPadding(30, 30, 30, 30);
-//                card.setMaxCardElevation(5);
-//                card.setCardElevation(9);
-//                card.setRadius(15);
-//
-//                ll.addView(card);
-//
-//                LinearLayout.LayoutParams params_estag = new LinearLayout.LayoutParams(
-//                        LinearLayout.LayoutParams.WRAP_CONTENT,
-//                        LinearLayout.LayoutParams.WRAP_CONTENT
-//                );
-//                params_estag.setMargins(0, 0, 0, 0);
-//                params_estag.width = 600;
-//                params_estag.height = 200;
-//
-//                TextView cargo = new TextView(mContext);
-//                cargo.setTextSize(23);
-//                cargo.setText(documentSnapshot.getString("cargo"));
-//                cargo.setLayoutParams(params_estag);
-//                cargo.setTextColor(getResources().getColor(R.color.colorPrimary));
-//                cargo.setTypeface(null, Typeface.BOLD);
-//
-//                card.addView(cargo);
-
-
-//
-
-
-            }
-//        });
-//    }
 
     @Override
     public void onBackPressed() {

@@ -197,6 +197,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             rem.setText(documentSnapshot.getString("salario"));
                             rem.setLayoutParams(params_rem);
                             rem.setBackgroundResource(R.drawable.btn_bg);
+                            rem.setTextColor(getResources().getColor(R.color.colorPrimary));
                             rem.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_tipo = new LinearLayout.LayoutParams(
@@ -212,6 +213,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             tipo.setText("Saiba mais");
                             tipo.setLayoutParams(params_tipo);
                             tipo.setBackgroundResource(R.drawable.btn_bg);
+                            tipo.setTextColor(getResources().getColor(R.color.colorPrimary));
                             tipo.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_interess = new LinearLayout.LayoutParams(
@@ -228,6 +230,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             interesse.setText(documentSnapshot.getString("interesse1"));
                             interesse.setLayoutParams(params_interess);
                             interesse.setBackgroundResource(R.drawable.btn_bg);
+                            interesse.setTextColor(getResources().getColor(R.color.colorPrimary));
                             interesse.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_foto = new LinearLayout.LayoutParams(

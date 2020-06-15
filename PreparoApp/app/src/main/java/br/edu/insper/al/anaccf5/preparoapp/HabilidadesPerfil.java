@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -41,6 +42,8 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
     Toolbar toolbar;
 
     CardView card;
+    LinearLayout ll;
+
 
     Context mContext;
 
@@ -49,13 +52,13 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habilidades_perfil);
 
-        le_situacaoHab1 = (TextView) findViewById(R.id.Situacao_Habilidade1);
-        le_situacaoHab2 = (TextView) findViewById(R.id.Situacao_Habilidade2);
-        le_situacaoHab3 = (TextView) findViewById(R.id.Situacao_Habilidade3);
-        le_situacaoHab4 = (TextView) findViewById(R.id.Situacao_Habilidade4);
-        le_situacaoHab5 = (TextView) findViewById(R.id.Situacao_Habilidade5);
-        le_situacaoHab6 = (TextView) findViewById(R.id.Situacao_Habilidade6);
-        le_situacaoHab7 = (TextView) findViewById(R.id.Situacao_Habilidade7);
+//        le_situacaoHab1 = (TextView) findViewById(R.id.Situacao_Habilidade1);
+//        le_situacaoHab2 = (TextView) findViewById(R.id.Situacao_Habilidade2);
+//        le_situacaoHab3 = (TextView) findViewById(R.id.Situacao_Habilidade3);
+//        le_situacaoHab4 = (TextView) findViewById(R.id.Situacao_Habilidade4);
+//        le_situacaoHab5 = (TextView) findViewById(R.id.Situacao_Habilidade5);
+//        le_situacaoHab6 = (TextView) findViewById(R.id.Situacao_Habilidade6);
+//        le_situacaoHab7 = (TextView) findViewById(R.id.Situacao_Habilidade7);
         le_name = (TextView) findViewById(R.id.nomeUser);
 
         auth = FirebaseAuth.getInstance();
@@ -64,7 +67,8 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         userid = auth.getCurrentUser().getUid();
 
 
-        card = (CardView) findViewById(R.id.cardhabib);
+//        card = (CardView) findViewById(R.id.cardhabib);
+        ll = (LinearLayout) findViewById(R.id.ll);
         mContext = getApplicationContext();
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -90,6 +94,55 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
                         if (lo_chico.substring(0, 10).equals("habilidade")) {
                             if (!documentSnapshot.getString(lo_chico).equals("Nenhum item selecionado")) {
 
+                                LinearLayout.LayoutParams param_habilidade_titulo = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT
+                                );
+                                param_habilidade_titulo.setMargins(0, 10, 0, 0);
+
+
+                                TextView habilidade = new TextView(mContext);
+                                habilidade.setTextSize(18);
+                                if (lo_chico.equals("habilidade1")){
+                                    habilidade.setText("Estatística:");
+                                }
+                                if (lo_chico.equals("habilidade2")){
+                                    habilidade.setText("Modelagem:");
+                                }
+                                if (lo_chico.equals("habilidade3")){
+                                    habilidade.setText("Modelagem financeira:");
+                                }
+                                if (lo_chico.equals("habilidade4")){
+                                    habilidade.setText("R:");
+                                }
+                                if (lo_chico.equals("habilidade5")){
+                                    habilidade.setText("Python:");
+                                }
+                                if (lo_chico.equals("habilidade6")){
+                                    habilidade.setText("AI:");
+                                }
+                                if (lo_chico.equals("habilidade7")){
+                                    habilidade.setText("Machine Learning:");
+                                }
+                                habilidade.setLayoutParams(param_habilidade_titulo);
+                                habilidade.setTextColor(getResources().getColor(R.color.colorPrimary));
+                                habilidade.setTypeface(null, Typeface.BOLD);
+
+                                LinearLayout.LayoutParams params_nivel = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT
+                                );
+                                params_nivel.setMargins(0, 10, 0, 0);
+
+
+                                TextView nivel = new TextView(mContext);
+                                nivel.setTextSize(18);
+                                nivel.setText(documentSnapshot.getString(lo_chico));
+                                nivel.setLayoutParams(params_nivel);
+                                nivel.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                                ll.addView(habilidade);
+                                ll.addView(nivel);
                             }
                         }
                     }

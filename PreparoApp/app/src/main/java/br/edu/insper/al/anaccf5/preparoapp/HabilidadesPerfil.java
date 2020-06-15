@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -36,6 +40,10 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     Toolbar toolbar;
 
+    CardView card;
+
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +63,10 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
 
         userid = auth.getCurrentUser().getUid();
 
+
+        card = (CardView) findViewById(R.id.cardhabib);
+        mContext = getApplicationContext();
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -72,31 +84,44 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if (documentSnapshot.contains("AI")) {
 
-                        if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")) {
-                            le_situacaoHab6.setText(documentSnapshot.getString("AI"));
-                        }
-                        if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")) {
-                            le_situacaoHab5.setText(documentSnapshot.getString("python"));
-                        }
-                        if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")) {
-                            le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
-                        }
-                        if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")) {
-                            le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
-                        }
-                        if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")) {
-                            le_situacaoHab4.setText(documentSnapshot.getString("R"));
-                        }
-                        if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")) {
-                            le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
-                        }
-                        if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")) {
-                            le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
+                for (String lo_chico : documentSnapshot.getData().keySet()) {
+                    if (lo_chico.length() > 10) {
+                        if (lo_chico.substring(0, 10).equals("habilidade")) {
+                            if (!documentSnapshot.getString(lo_chico).equals("Nenhum item selecionado")) {
+
+                            }
                         }
                     }
+                }
 
+
+
+//                if (documentSnapshot.contains("AI")) {
+//
+//                        if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab6.setText(documentSnapshot.getString("AI"));
+//                        }
+//                        if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab5.setText(documentSnapshot.getString("python"));
+//                        }
+//                        if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
+//                        }
+//                        if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
+//                        }
+//                        if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab4.setText(documentSnapshot.getString("R"));
+//                        }
+//                        if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
+//                        }
+//                        if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
+//                        }
+//                    }
+//
                     le_name.setText(documentSnapshot.getString("nome"));
 
             }

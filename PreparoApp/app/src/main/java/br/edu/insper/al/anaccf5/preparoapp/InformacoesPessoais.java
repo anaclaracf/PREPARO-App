@@ -94,7 +94,7 @@ public class InformacoesPessoais extends AppCompatActivity {
                             System.out.println("deu bom");
                         }
                     });
-                    Intent intent = new Intent(InformacoesPessoais.this, Identificacao.class);
+                    Intent intent = new Intent(InformacoesPessoais.this, Habilidades.class);
                     startActivity(intent);
                     InformacoesPessoais.this.onPause();
                 }

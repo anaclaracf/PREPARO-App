@@ -137,6 +137,9 @@ public class FormacaoPerfil extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_perfil:
+                Intent intent0 = new Intent(FormacaoPerfil.this, Perfil.class);
+                startActivity(intent0);
+                FormacaoPerfil.this.onPause();
                 break;
             case R.id.nav_vagas:
                 Intent intent = new Intent(FormacaoPerfil.this, Vagas.class);

@@ -105,7 +105,10 @@ public class CurriculoPerfil extends AppCompatActivity implements NavigationView
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else {
-            super.onBackPressed();
+            Intent intent0 = new Intent(CurriculoPerfil.this, Perfil.class);
+            startActivity(intent0);
+            CurriculoPerfil.this.onPause();
+
         }
 
     }
@@ -114,6 +117,9 @@ public class CurriculoPerfil extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_perfil:
+                Intent intent0 = new Intent(CurriculoPerfil.this, Perfil.class);
+                startActivity(intent0);
+                CurriculoPerfil.this.onPause();
                 break;
             case R.id.nav_vagas:
                 Intent intent = new Intent(CurriculoPerfil.this, Vagas.class);

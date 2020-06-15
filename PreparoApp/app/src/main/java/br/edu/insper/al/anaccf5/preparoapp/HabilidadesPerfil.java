@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -24,6 +25,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.ArrayList;
 
 import javax.annotation.Nullable;
 
@@ -82,6 +85,8 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_perfil);
+        final ArrayList <String> possuiHab= new ArrayList<>();
+
 
 
         DocumentReference documentReference = fstore.collection("candidatos").document(userid);
@@ -93,6 +98,7 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
                     if (lo_chico.length() > 10) {
                         if (lo_chico.substring(0, 10).equals("habilidade")) {
                             if (!documentSnapshot.getString(lo_chico).equals("Nenhum item selecionado")) {
+                                possuiHab.add(lo_chico.toString());
 
                                 LinearLayout.LayoutParams param_habilidade_titulo = new LinearLayout.LayoutParams(
                                         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -147,6 +153,25 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
                         }
                     }
                 }
+                if(possuiHab.isEmpty()){
+
+                    LinearLayout.LayoutParams params_nivel = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT );
+                    params_nivel.setMargins(0, 300, 0, 0);
+
+                    TextView nivel2 = new TextView(mContext);
+                    nivel2.setTextSize(18);
+                    nivel2.setText("Nenhuma habilidade foi selecionada!");
+                    nivel2.setLayoutParams(params_nivel);
+                    nivel2.setGravity(Gravity.CENTER);
+                    nivel2.setTypeface(null, Typeface.BOLD);
+                    nivel2.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    ll.addView(nivel2);
+
+
+
+                }
 
 
 
@@ -196,6 +221,9 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_perfil:
+                Intent intent0 = new Intent(HabilidadesPerfil.this, Perfil.class);
+                startActivity(intent0);
+                HabilidadesPerfil.this.onPause();
                 break;
             case R.id.nav_vagas:
                 Intent intent = new Intent(HabilidadesPerfil.this, Vagas.class);

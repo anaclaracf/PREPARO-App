@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
@@ -45,6 +46,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.io.IOException;
+import java.util.HashSet;
+
 import javax.annotation.Nullable;
 import com.google.android.material.navigation.NavigationView;
 
@@ -66,6 +69,8 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
     String [] each;
     String [] empresas;
 
+    HashSet<String> le_vagas = new HashSet<String>();
+
     ScrollView sv;
     LinearLayout ll;
 
@@ -76,7 +81,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vagas);
-      
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -142,7 +147,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 for (Object valores : documentSnapshot.getData().values()){
                     for (String item : each){
-                        if (item.equals(valores)){
+                        if (item.equals(valores) && !le_vagas.contains(document)){
 
                             /** CARD **/
                             LinearLayout.LayoutParams param_card = new LinearLayout.LayoutParams(
@@ -192,6 +197,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             rem.setText(documentSnapshot.getString("salario"));
                             rem.setLayoutParams(params_rem);
                             rem.setBackgroundResource(R.drawable.btn_bg);
+                            rem.setTextColor(getResources().getColor(R.color.colorPrimary));
                             rem.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_tipo = new LinearLayout.LayoutParams(
@@ -204,15 +210,17 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
 
                             Button tipo = new Button(mContext);
                             tipo.setTextSize(13);
-                            tipo.setText(documentSnapshot.getString("tipo"));
+                            tipo.setText("Saiba mais");
                             tipo.setLayoutParams(params_tipo);
                             tipo.setBackgroundResource(R.drawable.btn_bg);
+                            tipo.setTextColor(getResources().getColor(R.color.colorPrimary));
                             tipo.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_interess = new LinearLayout.LayoutParams(
                                     LinearLayout.LayoutParams.WRAP_CONTENT,
                                     LinearLayout.LayoutParams.WRAP_CONTENT
                             );
+
                             params_interess.setMargins(5, 760, 0, 10);
                             params_interess.width = 737;
                             params_interess.height = 150;
@@ -222,6 +230,7 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                             interesse.setText(documentSnapshot.getString("interesse1"));
                             interesse.setLayoutParams(params_interess);
                             interesse.setBackgroundResource(R.drawable.btn_bg);
+                            interesse.setTextColor(getResources().getColor(R.color.colorPrimary));
                             interesse.setAllCaps(false);
 
                             LinearLayout.LayoutParams params_foto = new LinearLayout.LayoutParams(
@@ -247,15 +256,24 @@ public class Vagas extends AppCompatActivity implements NavigationView.OnNavigat
                                             foto.setImageBitmap(bitmap);
                                         }
                                     });
-
                             card.addView(rem);
                             card.addView(tipo);
                             card.addView(interesse);
                             card.addView(foto);
                             card.addView(cargo);
-                            break;
+
+                            tipo.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(Vagas.this, DetalhesVaga.class);
+                                    intent.putExtra("vaga", document);
+                                    Vagas.this.startActivity(intent);
+                                    Vagas.this.onPause();
+                                }
+                            });
+
+                            le_vagas.add(document);
                         }
-                        break;
                     }
                 }
             }

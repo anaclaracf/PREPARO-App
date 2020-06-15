@@ -128,13 +128,13 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
                 numeroid = user.getUid();
                 DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
                 Map<String,Object> mapuser = new HashMap<>();
-                mapuser.put("estatistica", estatistica);
-                mapuser.put("modelagem", modelagem);
-                mapuser.put("modelagem financeira", mod_fin);
-                mapuser.put("R", hab_R);
-                mapuser.put("python", python);
-                mapuser.put("AI", ai);
-                mapuser.put("machine learning", m_learning);
+                mapuser.put("habilidade1", estatistica);
+                mapuser.put("habilidade2", modelagem);
+                mapuser.put("habilidade3", mod_fin);
+                mapuser.put("habilidade4", hab_R);
+                mapuser.put("habilidade5", python);
+                mapuser.put("habilidade6", ai);
+                mapuser.put("habilidade7", m_learning);
                 documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

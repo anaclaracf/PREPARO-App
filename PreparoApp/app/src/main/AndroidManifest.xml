@@ -13,10 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-   
-
-        <activity android:name=".AddcurriculoPerfil"/>
+        <activity android:name=".DetalhesVaga"/>
+        <activity android:name=".AddcurriculoPerfil" />
         <activity android:name=".SobreNos" />
         <activity android:name=".Vagas" />
         <activity android:name=".HabilidadesPerfil" />

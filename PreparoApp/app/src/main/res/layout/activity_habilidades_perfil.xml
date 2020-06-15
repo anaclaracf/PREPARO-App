@@ -44,7 +44,8 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="25dp"
                 android:elevation="0dp"
-                app:cardCornerRadius="15dp">
+                app:cardCornerRadius="15dp"
+                android:id="@+id/cardhabib">
 
                 <ImageView
                     android:layout_width="150dp"
@@ -89,235 +90,232 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <GridLayout
-                    android:id="@+id/mainGrid"
+                <LinearLayout
+                    android:id="@+id/ll"
                     android:layout_width="match_parent"
                     android:layout_height="1600dp"
-                    android:layout_marginTop="220dp"
-                    android:layout_weight="0"
-                    android:columnCount="1"
-                    android:columnOrderPreserved="false"
-                    android:padding="15dp"
-                    android:rowCount="14">
+                    android:layout_marginTop="255dp"
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
-                    <TextView
-                        android:id="@+id/Habilidade1"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Estatística"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade1"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Estatística"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade1"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade1"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade2"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Modelagem"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade2"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Modelagem"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade2"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade2"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade3"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Modelagem Financeira"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade3"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Modelagem Financeira"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade3"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade3"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade4"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="R"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade4"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="R"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade4"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade4"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade5"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Python"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade5"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Python"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade5"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade5"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade6"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="AI"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade6"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="AI"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade6"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade6"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                    <TextView
-                        android:id="@+id/Habilidade7"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Machine Learning"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Habilidade7"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Machine Learning"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="17dp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/Situacao_Habilidade7"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="Não tem conhecimento"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/Situacao_Habilidade7"-->
+<!--                        style="?android:attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="33dp"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingLeft="10dp"-->
+<!--                        android:paddingRight="10dp"-->
+<!--                        android:text="Não tem conhecimento"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/colorPrimary"-->
+<!--                        android:textSize="13dp" />-->
 
-                </GridLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 

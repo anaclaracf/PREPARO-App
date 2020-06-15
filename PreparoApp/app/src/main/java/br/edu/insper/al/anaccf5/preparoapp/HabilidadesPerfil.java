@@ -4,12 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -36,24 +41,35 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     Toolbar toolbar;
 
+    CardView card;
+    LinearLayout ll;
+
+
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habilidades_perfil);
 
-        le_situacaoHab1 = (TextView) findViewById(R.id.Situacao_Habilidade1);
-        le_situacaoHab2 = (TextView) findViewById(R.id.Situacao_Habilidade2);
-        le_situacaoHab3 = (TextView) findViewById(R.id.Situacao_Habilidade3);
-        le_situacaoHab4 = (TextView) findViewById(R.id.Situacao_Habilidade4);
-        le_situacaoHab5 = (TextView) findViewById(R.id.Situacao_Habilidade5);
-        le_situacaoHab6 = (TextView) findViewById(R.id.Situacao_Habilidade6);
-        le_situacaoHab7 = (TextView) findViewById(R.id.Situacao_Habilidade7);
+//        le_situacaoHab1 = (TextView) findViewById(R.id.Situacao_Habilidade1);
+//        le_situacaoHab2 = (TextView) findViewById(R.id.Situacao_Habilidade2);
+//        le_situacaoHab3 = (TextView) findViewById(R.id.Situacao_Habilidade3);
+//        le_situacaoHab4 = (TextView) findViewById(R.id.Situacao_Habilidade4);
+//        le_situacaoHab5 = (TextView) findViewById(R.id.Situacao_Habilidade5);
+//        le_situacaoHab6 = (TextView) findViewById(R.id.Situacao_Habilidade6);
+//        le_situacaoHab7 = (TextView) findViewById(R.id.Situacao_Habilidade7);
         le_name = (TextView) findViewById(R.id.nomeUser);
 
         auth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
 
         userid = auth.getCurrentUser().getUid();
+
+
+//        card = (CardView) findViewById(R.id.cardhabib);
+        ll = (LinearLayout) findViewById(R.id.ll);
+        mContext = getApplicationContext();
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -72,31 +88,93 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if (documentSnapshot.contains("AI")) {
 
-                        if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")) {
-                            le_situacaoHab6.setText(documentSnapshot.getString("AI"));
-                        }
-                        if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")) {
-                            le_situacaoHab5.setText(documentSnapshot.getString("python"));
-                        }
-                        if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")) {
-                            le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
-                        }
-                        if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")) {
-                            le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
-                        }
-                        if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")) {
-                            le_situacaoHab4.setText(documentSnapshot.getString("R"));
-                        }
-                        if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")) {
-                            le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
-                        }
-                        if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")) {
-                            le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
+                for (String lo_chico : documentSnapshot.getData().keySet()) {
+                    if (lo_chico.length() > 10) {
+                        if (lo_chico.substring(0, 10).equals("habilidade")) {
+                            if (!documentSnapshot.getString(lo_chico).equals("Nenhum item selecionado")) {
+
+                                LinearLayout.LayoutParams param_habilidade_titulo = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT
+                                );
+                                param_habilidade_titulo.setMargins(0, 10, 0, 0);
+
+
+                                TextView habilidade = new TextView(mContext);
+                                habilidade.setTextSize(18);
+                                if (lo_chico.equals("habilidade1")){
+                                    habilidade.setText("Estatística:");
+                                }
+                                if (lo_chico.equals("habilidade2")){
+                                    habilidade.setText("Modelagem:");
+                                }
+                                if (lo_chico.equals("habilidade3")){
+                                    habilidade.setText("Modelagem financeira:");
+                                }
+                                if (lo_chico.equals("habilidade4")){
+                                    habilidade.setText("R:");
+                                }
+                                if (lo_chico.equals("habilidade5")){
+                                    habilidade.setText("Python:");
+                                }
+                                if (lo_chico.equals("habilidade6")){
+                                    habilidade.setText("AI:");
+                                }
+                                if (lo_chico.equals("habilidade7")){
+                                    habilidade.setText("Machine Learning:");
+                                }
+                                habilidade.setLayoutParams(param_habilidade_titulo);
+                                habilidade.setTextColor(getResources().getColor(R.color.colorPrimary));
+                                habilidade.setTypeface(null, Typeface.BOLD);
+
+                                LinearLayout.LayoutParams params_nivel = new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT
+                                );
+                                params_nivel.setMargins(0, 10, 0, 0);
+
+
+                                TextView nivel = new TextView(mContext);
+                                nivel.setTextSize(18);
+                                nivel.setText(documentSnapshot.getString(lo_chico));
+                                nivel.setLayoutParams(params_nivel);
+                                nivel.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                                ll.addView(habilidade);
+                                ll.addView(nivel);
+                            }
                         }
                     }
+                }
 
+
+
+//                if (documentSnapshot.contains("AI")) {
+//
+//                        if (!documentSnapshot.getString("AI").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab6.setText(documentSnapshot.getString("AI"));
+//                        }
+//                        if (!documentSnapshot.getString("python").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab5.setText(documentSnapshot.getString("python"));
+//                        }
+//                        if (!documentSnapshot.getString("estatistica").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab1.setText(documentSnapshot.getString("estatistica"));
+//                        }
+//                        if (!documentSnapshot.getString("modelagem").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab2.setText(documentSnapshot.getString("modelagem"));
+//                        }
+//                        if (!documentSnapshot.getString("R").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab4.setText(documentSnapshot.getString("R"));
+//                        }
+//                        if (!documentSnapshot.getString("modelagem financeira").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab3.setText(documentSnapshot.getString("modelagem financeira"));
+//                        }
+//                        if (!documentSnapshot.getString("machine learning").equals("Nenhum item selecionado")) {
+//                            le_situacaoHab7.setText(documentSnapshot.getString("machine learning"));
+//                        }
+//                    }
+//
                     le_name.setText(documentSnapshot.getString("nome"));
 
             }

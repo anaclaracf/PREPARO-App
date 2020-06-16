@@ -5,15 +5,21 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -50,6 +56,7 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
 
     Context mContext;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +75,6 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
         fstore = FirebaseFirestore.getInstance();
 
         userid = auth.getCurrentUser().getUid();
-
 
 //        card = (CardView) findViewById(R.id.cardhabib);
         ll = (LinearLayout) findViewById(R.id.ll);
@@ -160,6 +166,14 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
                             LinearLayout.LayoutParams.WRAP_CONTENT );
                     params_nivel.setMargins(0, 300, 0, 0);
 
+
+                    LinearLayout.LayoutParams params_botao = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    );
+                    params_botao.setMargins(250, 400, 0, 0);
+                    params_botao.width = 400;
+
                     TextView nivel2 = new TextView(mContext);
                     nivel2.setTextSize(18);
                     nivel2.setText("Nenhuma habilidade foi selecionada!");
@@ -167,7 +181,31 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
                     nivel2.setGravity(Gravity.CENTER);
                     nivel2.setTypeface(null, Typeface.BOLD);
                     nivel2.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                    Button preencher = new Button(mContext);
+                    preencher.setTextSize(13);
+                    preencher.setText("Adicionar Habilidades");
+                    preencher.setLayoutParams(params_botao);
+                    preencher.setBackgroundResource(R.drawable.btn_bg);
+                    preencher.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    preencher.setAllCaps(false);
+                    preencher.setId(0);
+
+
+                    preencher.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(HabilidadesPerfil.this, Habilidades.class);
+                            intent.putExtra("habilidadesperfil", "Preencher");
+                            startActivity(intent);
+                            finish();
+
+                        }
+                    });
+
                     ll.addView(nivel2);
+                    ll.addView(preencher);
 
 
 
@@ -204,6 +242,8 @@ public class HabilidadesPerfil extends AppCompatActivity implements NavigationVi
 
             }
         });
+
+
     }
 
     @Override

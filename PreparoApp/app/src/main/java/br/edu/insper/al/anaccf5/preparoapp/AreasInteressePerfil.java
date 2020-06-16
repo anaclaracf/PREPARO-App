@@ -122,6 +122,9 @@ public class AreasInteressePerfil extends AppCompatActivity implements Navigatio
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_perfil:
+                Intent intent0 = new Intent(AreasInteressePerfil.this, Perfil.class);
+                startActivity(intent0);
+                AreasInteressePerfil.this.onPause();
                 break;
             case R.id.nav_vagas:
                 Intent intent = new Intent(AreasInteressePerfil.this, Vagas.class);

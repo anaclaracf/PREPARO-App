@@ -89,6 +89,16 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
 
 
 
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+
+            avancar.setVisibility(View.GONE);
+            voltar.setVisibility(View.GONE);
+            preecherDepois.setText("Concluído");
+        }
+
+
+
         voltar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -101,17 +111,17 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
         });
 
 
-        preecherDepois.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Habilidades.this, Perfil.class);
-                startActivity(intent);
-                Habilidades.this.onPause();
-
-            }
-        });
+//        preecherDepois.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(Habilidades.this, Perfil.class);
+//                startActivity(intent);
+//                Habilidades.this.onPause();
+//
+//            }
+//        });
 
 
         avancar.setOnClickListener(new View.OnClickListener() {
@@ -163,25 +173,27 @@ public class Habilidades extends AppCompatActivity implements AdapterView.OnItem
                 numeroid = user.getUid();
                 DocumentReference documentReference = fstore.collection("candidatos").document(numeroid);
                 Map<String,Object> mapuser = new HashMap<>();
-                mapuser.put("estatistica", estatistica);
-                mapuser.put("modelagem", modelagem);
-                mapuser.put("modelagem financeira", mod_fin);
-                mapuser.put("R", hab_R);
-                mapuser.put("python", python);
-                mapuser.put("AI", ai);
-                mapuser.put("machine learning", m_learning);
+                mapuser.put("habilidade1", estatistica);
+                mapuser.put("habilidade2", modelagem);
+                mapuser.put("habilidade3", mod_fin);
+                mapuser.put("habilidade4", hab_R);
+                mapuser.put("habilidade5", python);
+                mapuser.put("habilidade6", ai);
+                mapuser.put("habilidade7", m_learning);
                 documentReference.update(mapuser).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         System.out.println("Funcionou!");
                     }
                 });
-                Intent intent = new Intent(Habilidades.this, Olimpiadas.class);
+                Intent intent = new Intent(Habilidades.this, Perfil.class);
                 startActivity(intent);
                 Habilidades.this.onPause();
 
             };
         });
+
+
 
 
     }
